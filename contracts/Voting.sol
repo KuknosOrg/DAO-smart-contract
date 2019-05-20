@@ -1,8 +1,9 @@
 pragma solidity >=0.4.21 <0.6.0;
 
 import "./Ownable.sol";
+import "./AccessToken.sol";
 
-contract Voting is Ownable {
+contract Voting is Ownable, AccessToken {
 
   struct Proposal {
       string title;
@@ -23,11 +24,13 @@ contract Voting is Ownable {
 
   address[] public voters;
 
-  bytes32[] public candidateList;
-
-
-  constructor(address[] memory _voters) public {
+  constructor(address[] memory _voters, uint _voterTokensCount) AccessToken(_voterTokensCount) public {
     voters = _voters;
+    renewToken(voters);
+  }
+
+  function renewYearTokens() public onlyVoters  {
+    renewToken(voters);
   }
 
   modifier onlyVoters() {
@@ -38,8 +41,8 @@ contract Voting is Ownable {
   function voteForProposal(uint _proposalIndex, int8 _vote) public onlyVoters {
       Proposal memory proposal = proposals[_proposalIndex];
       require(proposal.author != address(0), "proposal not found");
-      require(proposal.startDate < block.timestamp , "voting is not started");
-      require(proposal.endDate > block.timestamp , "voting was finished");
+      require(proposal.startDate < getTime(), "voting is not started");
+      require(proposal.endDate > getTime(), "voting was finished");
       require(votesReceived[_proposalIndex][msg.sender] == 0, "your vote registered later");
       require(_vote != 0, "you must set up or down with 1 or -1 value");
       if(_vote > 0) {
@@ -85,8 +88,8 @@ contract Voting is Ownable {
       uint startDate,
       uint endDate,
       string memory url,
-      bytes32 hashCode) public onlyVoters {
-         proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url,hashCode, block.timestamp, 0 ,0));
+      bytes32 hashCode) public onlyVoters useToken(1) {
+          proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0));
   }
 
   function inVoters(address caller) private view returns (bool) {

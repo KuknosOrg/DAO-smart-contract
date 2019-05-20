@@ -1,6 +1,6 @@
 const Voting = artifacts.require("./Voting.sol")
 
-contract("Voting", (accounts) => {
+contract("Ownable", (accounts) => {
     var ct;
     it("get instance", () => Voting.deployed().then(instance => ct = instance))
     it("check owner", () =>
