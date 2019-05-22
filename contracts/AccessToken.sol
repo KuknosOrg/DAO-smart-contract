@@ -35,7 +35,7 @@ contract AccessToken {
       }
   }
 
-  function getTime () internal view returns (uint) {
+  function getTime() internal view returns (uint) {
         return block.timestamp;
   }
 

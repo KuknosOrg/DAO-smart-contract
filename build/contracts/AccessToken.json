@@ -60,12 +60,12 @@
       "type": "constructor"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"accessTokensCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTokenIssueDate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_accessTokensCount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":\"AccessToken\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0x66b859165fbc8bcb26c58a86f3b50fd649796c9d8f35d08e8acf3abc15a520c9\",\"urls\":[\"bzzr://37f48644d71f1424d017048e16f2801d0b2ac98c2cf4bfcf1108ea48481a6a86\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b506040516020806101bf8339810180604052602081101561003057600080fd5b81019080805190602001909291905050508060018190555050610167806100586000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355de8c7e1461005c57806370a0823114610087578063cededb30146100ec575b600080fd5b34801561006857600080fd5b50610071610117565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b506100d6600480360360208110156100aa57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061011d565b6040518082815260200191505060405180910390f35b3480156100f857600080fd5b50610101610135565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a723058208ac3a5c5cec0c18438686902a1247f8fb25abd83a72b0e23cde23738842ff3670029",
-  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355de8c7e1461005c57806370a0823114610087578063cededb30146100ec575b600080fd5b34801561006857600080fd5b50610071610117565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b506100d6600480360360208110156100aa57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061011d565b6040518082815260200191505060405180910390f35b3480156100f857600080fd5b50610101610135565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a723058208ac3a5c5cec0c18438686902a1247f8fb25abd83a72b0e23cde23738842ff3670029",
-  "sourceMap": "36:1097:0:-;;;239:95;8:9:-1;5:2;;;30:1;27;20:12;5:2;239:95:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;239:95:0;;;;;;;;;;;;;;;;310:18;290:17;:38;;;;239:95;36:1097;;;;;;",
-  "deployedSourceMap": "36:1097:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;155:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:29:0;;;;;;;;;;;;;;;;;;;;;;;191:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;191:41:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;191:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;118:30:0;;;;;;;;;;;;;;;;;;;;;;;155:29;;;;:::o;191:41::-;;;;;;;;;;;;;;;;;:::o;118:30::-;;;;:::o",
-  "source": "pragma solidity >=0.4.21 <0.6.0;\r\n\r\ncontract AccessToken {\r\n\r\n  uint constant YEAR_SECONDS = 365 * 24 * 60 * 60;\r\n\r\n  uint public lastTokenIssueDate;\r\n\r\n  uint public accessTokensCount;\r\n\r\n  mapping(address => uint) public balanceOf;\r\n\r\n  constructor(uint _accessTokensCount) public {\r\n    accessTokensCount = _accessTokensCount;\r\n  }\r\n\r\n  modifier useToken(uint count) {\r\n      require(balanceOf[msg.sender] >= count, \"you have not enough token\");\r\n      _;\r\n      balanceOf[msg.sender] -= count;\r\n  }\r\n\r\n  function renewToken(address[] memory voters) internal {\r\n      if(lastTokenIssueDate > 0) {\r\n          uint endDate = lastTokenIssueDate + YEAR_SECONDS;\r\n          require(endDate < getTime(), \"you must renew tokens after one year\");\r\n      }\r\n      issueProposalToken(voters, accessTokensCount);\r\n      lastTokenIssueDate = getTime();\r\n  }\r\n\r\n  function issueProposalToken(address[] memory _voters, uint count) private {\r\n      for(uint i = 0; i < _voters.length; i++) {\r\n         balanceOf[_voters[i]] = count;\r\n      }\r\n  }\r\n\r\n  function getTime () internal view returns (uint) {\r\n        return block.timestamp;\r\n  }\r\n\r\n}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"accessTokensCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTokenIssueDate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_accessTokensCount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":\"AccessToken\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0x171d1f867738131faf18496224cb940785bc59eaa8d3cfef8eb2d1f2aa879a1b\",\"urls\":[\"bzzr://1c92f745718461f69bd8980de66065167766d0f86fb39d671601873fb551c2e9\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b506040516020806101bf8339810180604052602081101561003057600080fd5b81019080805190602001909291905050508060018190555050610167806100586000396000f3fe608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355de8c7e1461005c57806370a0823114610087578063cededb30146100ec575b600080fd5b34801561006857600080fd5b50610071610117565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b506100d6600480360360208110156100aa57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061011d565b6040518082815260200191505060405180910390f35b3480156100f857600080fd5b50610101610135565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a72305820426652d6a25a984548c6d6dc5cf77ad01052990ad77c3aa63a8060ecc7450d770029",
+  "deployedBytecode": "0x608060405260043610610057576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff16806355de8c7e1461005c57806370a0823114610087578063cededb30146100ec575b600080fd5b34801561006857600080fd5b50610071610117565b6040518082815260200191505060405180910390f35b34801561009357600080fd5b506100d6600480360360208110156100aa57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061011d565b6040518082815260200191505060405180910390f35b3480156100f857600080fd5b50610101610135565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a72305820426652d6a25a984548c6d6dc5cf77ad01052990ad77c3aa63a8060ecc7450d770029",
+  "sourceMap": "36:1096:0:-;;;239:95;8:9:-1;5:2;;;30:1;27;20:12;5:2;239:95:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;239:95:0;;;;;;;;;;;;;;;;310:18;290:17;:38;;;;239:95;36:1096;;;;;;",
+  "deployedSourceMap": "36:1096:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;155:29;;8:9:-1;5:2;;;30:1;27;20:12;5:2;155:29:0;;;;;;;;;;;;;;;;;;;;;;;191:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;191:41:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;191:41:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;118:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;118:30:0;;;;;;;;;;;;;;;;;;;;;;;155:29;;;;:::o;191:41::-;;;;;;;;;;;;;;;;;:::o;118:30::-;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\r\n\r\ncontract AccessToken {\r\n\r\n  uint constant YEAR_SECONDS = 365 * 24 * 60 * 60;\r\n\r\n  uint public lastTokenIssueDate;\r\n\r\n  uint public accessTokensCount;\r\n\r\n  mapping(address => uint) public balanceOf;\r\n\r\n  constructor(uint _accessTokensCount) public {\r\n    accessTokensCount = _accessTokensCount;\r\n  }\r\n\r\n  modifier useToken(uint count) {\r\n      require(balanceOf[msg.sender] >= count, \"you have not enough token\");\r\n      _;\r\n      balanceOf[msg.sender] -= count;\r\n  }\r\n\r\n  function renewToken(address[] memory voters) internal {\r\n      if(lastTokenIssueDate > 0) {\r\n          uint endDate = lastTokenIssueDate + YEAR_SECONDS;\r\n          require(endDate < getTime(), \"you must renew tokens after one year\");\r\n      }\r\n      issueProposalToken(voters, accessTokensCount);\r\n      lastTokenIssueDate = getTime();\r\n  }\r\n\r\n  function issueProposalToken(address[] memory _voters, uint count) private {\r\n      for(uint i = 0; i < _voters.length; i++) {\r\n         balanceOf[_voters[i]] = count;\r\n      }\r\n  }\r\n\r\n  function getTime() internal view returns (uint) {\r\n        return block.timestamp;\r\n  }\r\n\r\n}",
   "sourcePath": "D:\\projects\\blockchain\\kuknos-dao\\contracts\\AccessToken.sol",
   "ast": {
     "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
@@ -1596,7 +1596,7 @@
             "body": {
               "id": 125,
               "nodeType": "Block",
-              "src": "1089:39:0",
+              "src": "1088:39:0",
               "statements": [
                 {
                   "expression": {
@@ -1608,7 +1608,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 625,
-                      "src": "1107:5:0",
+                      "src": "1106:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
                         "typeString": "block"
@@ -1622,7 +1622,7 @@
                     "memberName": "timestamp",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "1107:15:0",
+                    "src": "1106:15:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1631,7 +1631,7 @@
                   "functionReturnParameters": 121,
                   "id": 124,
                   "nodeType": "Return",
-                  "src": "1100:22:0"
+                  "src": "1099:22:0"
                 }
               ]
             },
@@ -1646,7 +1646,7 @@
               "id": 118,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1057:2:0"
+              "src": "1056:2:0"
             },
             "returnParameters": {
               "id": 121,
@@ -1658,7 +1658,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
-                  "src": "1083:4:0",
+                  "src": "1082:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1669,7 +1669,7 @@
                     "id": 119,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1083:4:0",
+                    "src": "1082:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1679,20 +1679,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1082:6:0"
+              "src": "1081:6:0"
             },
             "scope": 127,
-            "src": "1040:88:0",
+            "src": "1040:87:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
         "scope": 128,
-        "src": "36:1097:0"
+        "src": "36:1096:0"
       }
     ],
-    "src": "0:1133:0"
+    "src": "0:1132:0"
   },
   "legacyAST": {
     "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
@@ -3223,7 +3223,7 @@
             "body": {
               "id": 125,
               "nodeType": "Block",
-              "src": "1089:39:0",
+              "src": "1088:39:0",
               "statements": [
                 {
                   "expression": {
@@ -3235,7 +3235,7 @@
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 625,
-                      "src": "1107:5:0",
+                      "src": "1106:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
                         "typeString": "block"
@@ -3249,7 +3249,7 @@
                     "memberName": "timestamp",
                     "nodeType": "MemberAccess",
                     "referencedDeclaration": null,
-                    "src": "1107:15:0",
+                    "src": "1106:15:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3258,7 +3258,7 @@
                   "functionReturnParameters": 121,
                   "id": 124,
                   "nodeType": "Return",
-                  "src": "1100:22:0"
+                  "src": "1099:22:0"
                 }
               ]
             },
@@ -3273,7 +3273,7 @@
               "id": 118,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1057:2:0"
+              "src": "1056:2:0"
             },
             "returnParameters": {
               "id": 121,
@@ -3285,7 +3285,7 @@
                   "name": "",
                   "nodeType": "VariableDeclaration",
                   "scope": 126,
-                  "src": "1083:4:0",
+                  "src": "1082:4:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -3296,7 +3296,7 @@
                     "id": 119,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1083:4:0",
+                    "src": "1082:4:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -3306,20 +3306,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1082:6:0"
+              "src": "1081:6:0"
             },
             "scope": 127,
-            "src": "1040:88:0",
+            "src": "1040:87:0",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "internal"
           }
         ],
         "scope": 128,
-        "src": "36:1097:0"
+        "src": "36:1096:0"
       }
     ],
-    "src": "0:1133:0"
+    "src": "0:1132:0"
   },
   "compiler": {
     "name": "solc",
@@ -3327,7 +3327,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2019-05-20T09:15:35.713Z",
+  "updatedAt": "2019-05-21T04:34:59.188Z",
   "devdoc": {
     "methods": {}
   },

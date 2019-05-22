@@ -6,6 +6,7 @@ import "./AccessToken.sol";
 contract Voting is Ownable, AccessToken {
 
   struct Proposal {
+      uint id;
       string title;
       uint ProposalType;
       uint startDate;
@@ -16,6 +17,7 @@ contract Voting is Ownable, AccessToken {
       uint registerDate;
       uint up;
       uint down;
+      address contractAddress;
   }
 
   Proposal[] proposals;
@@ -62,19 +64,28 @@ contract Voting is Ownable, AccessToken {
       return proposals.length;
   }
 
-  function getProposal(uint index) public view returns (string memory, uint , uint, uint, address, string memory, bytes32, uint, uint, uint ) {
+  function getProposal(uint index) public view returns (
+      uint, string memory, uint, uint, uint, address, string memory, bytes32, uint, uint, uint, address, bool, bool, uint, uint ) {
       Proposal memory proposal = proposals[index];
+      uint total = proposal.up + proposal.down;
       return (
-          proposal.title,
-          proposal.ProposalType,
-          proposal.startDate,
-          proposal.endDate,
-          proposal.author,
-          proposal.url,
-          proposal.hashCode,
-          proposal.registerDate,
-          proposal.up,
-          proposal.down);
+            proposal.id,
+            proposal.title,
+            proposal.ProposalType,
+            proposal.startDate,
+            proposal.endDate,
+            proposal.author,
+            proposal.url,
+            proposal.hashCode,
+            proposal.registerDate,
+            proposal.up,
+            proposal.down,
+            proposal.contractAddress,
+            getTime() < proposal.startDate, // isNotStarted
+            getTime() >= proposal.endDate, // isExpired
+            proposal.up * 100 / total, // up percentage
+            proposal.down * 100 / total // down percentage
+        );
   }
 
 
@@ -83,13 +94,16 @@ contract Voting is Ownable, AccessToken {
   }
 
   function registerProposal(
+      uint id,
       string memory title,
       uint ProposalType,
       uint startDate,
       uint endDate,
       string memory url,
-      bytes32 hashCode) public onlyVoters useToken(1) {
-          proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0));
+      bytes32 hashCode,
+      address contractAddress
+      ) public onlyVoters useToken(1) {
+          proposals.push(Proposal(id, title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, contractAddress));
   }
 
   function inVoters(address caller) private view returns (bool) {
