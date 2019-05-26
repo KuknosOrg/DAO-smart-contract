@@ -25,11 +25,11 @@ contract AccessToken {
           uint endDate = lastTokenIssueDate + YEAR_SECONDS;
           require(endDate < getTime(), "you must renew tokens after one year");
       }
-      issueProposalToken(voters, accessTokensCount);
+      issueAccessToken(voters, accessTokensCount);
       lastTokenIssueDate = getTime();
   }
 
-  function issueProposalToken(address[] memory _voters, uint count) private {
+  function issueAccessToken(address[] memory _voters, uint count) private {
       for(uint i = 0; i < _voters.length; i++) {
          balanceOf[_voters[i]] = count;
       }
