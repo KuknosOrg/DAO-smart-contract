@@ -1,5 +1,7 @@
 pragma solidity >=0.4.21 <0.6.0;
 
+import "./library/Utils.sol";
+
 contract Members {
 
   address[] public members;
@@ -19,15 +21,7 @@ contract Members {
   }
 
   function deleteMember(address member) internal {
-      int test = findMember(member);
-      require(test >= 0, "member not exist");
-      require(members.length >= 0, "members is emplty");
-      uint index = uint(test);
-      if(index != members.length - 1){
-          members[index] = members[members.length - 1];
-      }
-      delete members[members.length - 1];
-      members.length--;
+      Utils.removeAddressFromArray(members, member);
   }
 
   function membersCount() public view returns (uint) {
@@ -39,22 +33,7 @@ contract Members {
   }
 
   function inMembers(address member) private view returns (bool) {
-      if(findMember(member) >= 0){
-          return true;
-      } else {
-          return false;
-      }
+      return Utils.findIndex(members, member) >= 0;
   }
 
-  function findMember(address member) private view returns (int) {
-      if(member == address(0)){
-          return -1;
-      }
-      for(uint i = 0; i < members.length; i++) {
-          if (members[i] == member) {
-             return int(i);
-          }
-      }
-      return -1;
-  }
 }

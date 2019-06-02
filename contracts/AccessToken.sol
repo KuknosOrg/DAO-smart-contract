@@ -20,8 +20,8 @@ contract AccessToken {
       balanceOf[msg.sender] -= count;
   }
 
-  function renewToken(address[] memory voters) internal {
-      if(lastTokenIssueDate > 0) {
+  function renewToken(address[] memory voters, bool force) internal {
+      if(lastTokenIssueDate > 0 && !force) {
           uint endDate = lastTokenIssueDate + YEAR_SECONDS;
           require(endDate < getTime(), "you must renew tokens after one year");
       }

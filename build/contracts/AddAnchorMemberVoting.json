@@ -1,0 +1,583 @@
+{
+  "contractName": "AddAnchorMemberVoting",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renewYearTokens",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "name": "ProposalType",
+          "type": "uint256"
+        },
+        {
+          "name": "startDate",
+          "type": "uint256"
+        },
+        {
+          "name": "endDate",
+          "type": "uint256"
+        },
+        {
+          "name": "url",
+          "type": "string"
+        },
+        {
+          "name": "hashCode",
+          "type": "bytes32"
+        },
+        {
+          "name": "contractAddress",
+          "type": "address"
+        }
+      ],
+      "name": "registerProposal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "membersCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "votesReceived",
+      "outputs": [
+        {
+          "name": "",
+          "type": "int8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProposalStatus",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "bool"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "accessTokensCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_proposalIndex",
+          "type": "uint256"
+        },
+        {
+          "name": "_vote",
+          "type": "int8"
+        }
+      ],
+      "name": "voteForProposal",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "members",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "name": "balanceOf",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getProposalsCount",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "index",
+          "type": "uint256"
+        }
+      ],
+      "name": "getProposal",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        },
+        {
+          "name": "",
+          "type": "string"
+        },
+        {
+          "name": "",
+          "type": "bytes32"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "uint256"
+        },
+        {
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "lastTokenIssueDate",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "membersList",
+      "outputs": [
+        {
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "_newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipRenounced",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    }
+  ],
+  "metadata": "",
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "sourceMap": "",
+  "deployedSourceMap": "",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\r\n\r\nimport \"./Voting.sol\";\r\n\r\ncontract AddAnchorMemberVoting is Voting {\r\n\r\n}",
+  "sourcePath": "D:\\projects\\blockchain\\kuknos-dao\\contracts\\AddAnchorMemberVoting.sol",
+  "ast": {
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AddAnchorMemberVoting.sol",
+    "exportedSymbols": {
+      "AddAnchorMemberVoting": [
+        133
+      ]
+    },
+    "id": 134,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 129,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Voting.sol",
+        "file": "./Voting.sol",
+        "id": 130,
+        "nodeType": "ImportDirective",
+        "scope": 134,
+        "sourceUnit": 1349,
+        "src": "36:22:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 131,
+              "name": "Voting",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1348,
+              "src": "96:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Voting_$1348",
+                "typeString": "contract Voting"
+              }
+            },
+            "id": 132,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:6:1"
+          }
+        ],
+        "contractDependencies": [
+          127,
+          675,
+          785,
+          930,
+          1348
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 133,
+        "linearizedBaseContracts": [
+          133,
+          1348,
+          675,
+          785,
+          127,
+          930
+        ],
+        "name": "AddAnchorMemberVoting",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 134,
+        "src": "62:47:1"
+      }
+    ],
+    "src": "0:109:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AddAnchorMemberVoting.sol",
+    "exportedSymbols": {
+      "AddAnchorMemberVoting": [
+        133
+      ]
+    },
+    "id": 134,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 129,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:1"
+      },
+      {
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Voting.sol",
+        "file": "./Voting.sol",
+        "id": 130,
+        "nodeType": "ImportDirective",
+        "scope": 134,
+        "sourceUnit": 1349,
+        "src": "36:22:1",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 131,
+              "name": "Voting",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 1348,
+              "src": "96:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Voting_$1348",
+                "typeString": "contract Voting"
+              }
+            },
+            "id": 132,
+            "nodeType": "InheritanceSpecifier",
+            "src": "96:6:1"
+          }
+        ],
+        "contractDependencies": [
+          127,
+          675,
+          785,
+          930,
+          1348
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": false,
+        "id": 133,
+        "linearizedBaseContracts": [
+          133,
+          1348,
+          675,
+          785,
+          127,
+          930
+        ],
+        "name": "AddAnchorMemberVoting",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 134,
+        "src": "62:47:1"
+      }
+    ],
+    "src": "0:109:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2019-06-02T11:19:58.498Z",
+  "devdoc": {
+    "methods": {
+      "renounceOwnership()": {
+        "details": "Allows the current owner to relinquish control of the contract."
+      },
+      "transferOwnership(address)": {
+        "details": "Allows the current owner to transfer control of the contract to a newOwner.",
+        "params": {
+          "_newOwner": "The address to transfer ownership to."
+        }
+      }
+    }
+  },
+  "userdoc": {
+    "methods": {
+      "renounceOwnership()": {
+        "notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+      }
+    }
+  }
+}

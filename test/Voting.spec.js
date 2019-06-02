@@ -16,18 +16,10 @@ const zeroAddress = () => '0x0000000000000000000000000000000000000000';
 
 contract("Voting", (accounts) => {
     var ct;
+
     beforeEach(() => {
         return Voting.deployed().then(instance => ct = instance)
     })
-    it("voters count", () =>
-        ct.votersCount()
-            .then(count => assert.equal(count, 9))
-    )
-
-    it("voters list", () =>
-        ct.votersList()
-            .then(list => assert.equal(list.length, 9))
-    )
 
     it("registerProposal", () =>
         ct.balanceOf(accounts[0])
