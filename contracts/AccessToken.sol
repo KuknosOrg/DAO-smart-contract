@@ -6,11 +6,11 @@ contract AccessToken {
 
   uint public lastTokenIssueDate;
 
-  uint public accessTokensCount;
+  uint public accessTokensCount = 50;
 
   mapping(address => uint) public balanceOf;
 
-  constructor(uint _accessTokensCount) public {
+  constructor(uint _accessTokensCount) public{
     accessTokensCount = _accessTokensCount;
   }
 
@@ -29,10 +29,18 @@ contract AccessToken {
       lastTokenIssueDate = getTime();
   }
 
-  function issueAccessToken(address[] memory _voters, uint count) private {
-      for(uint i = 0; i < _voters.length; i++) {
-         balanceOf[_voters[i]] = count;
+  function issueAccessToken(address[] memory _members, uint count) internal {
+      for(uint i = 0; i < _members.length; i++) {
+         setAccessToken(_members[i], count);
       }
+  }
+
+  function setAccessToken(address _member, uint count) internal {
+      balanceOf[_member] = count;
+  }
+
+  function setAccessTokensCount(uint count) internal {
+    accessTokensCount = count;
   }
 
   function getTime() internal view returns (uint) {

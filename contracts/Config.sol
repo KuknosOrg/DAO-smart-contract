@@ -10,7 +10,7 @@ contract Config {
 
     uint public changeAnchorMemberThreshold = 51;
 
-    uint public changeConfig = 80;
+    uint public changeConfigThreshold = 80;
 
     function setAddAnchorThreshold(uint value) internal {
         addAnchorThreshold = value;

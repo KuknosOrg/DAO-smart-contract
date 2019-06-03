@@ -2,6 +2,7 @@ pragma solidity >=0.4.21 <0.6.0;
 
 import "./library/Utils.sol";
 import "./Members.sol";
+import "./AccessToken.sol";
 
 contract Anchors is Members {
 

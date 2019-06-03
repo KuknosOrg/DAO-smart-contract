@@ -9,7 +9,7 @@ contract Voting is Ownable, AccessToken, Anchors {
   struct Proposal {
     uint id;
     string title;
-    uint ProposalType;
+    uint proposalType;
     uint startDate;
     uint endDate;
     address author;
@@ -25,12 +25,12 @@ contract Voting is Ownable, AccessToken, Anchors {
 
   mapping (uint => mapping(address => int8)) public votesReceived;
 
-  constructor(address[] memory _voters, uint _voterTokensCount) AccessToken(_voterTokensCount) Members(_voters) public {
-    renewToken(members);
+  constructor(address[] memory _voters, uint _voterTokensCount) Members(_voters) AccessToken(_voterTokensCount) public {
+    renewToken(members, false);
   }
 
   function renewYearTokens() public onlyMembers  {
-    renewToken(members);
+    renewToken(members, false);
   }
 
   function voteForProposal(uint _proposalIndex, int8 _vote) public onlyMembers {
@@ -58,7 +58,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     return (
       proposal.id,
       proposal.title,
-      proposal.ProposalType,
+      proposal.proposalType,
       proposal.startDate,
       proposal.endDate,
       proposal.author,
@@ -71,13 +71,14 @@ contract Voting is Ownable, AccessToken, Anchors {
     );
   }
 
-  function getProposalStatus(uint index) public view returns ( uint, uint, uint, address, bool, bool, uint, uint ) {
+  function getProposalStatus(uint index) public view returns ( uint, uint, uint, uint, address, bool, bool, uint, uint ) {
     Proposal memory proposal = proposals[index];
     uint total = proposal.up + proposal.down;
     return (
       proposal.id,
       proposal.up,
       proposal.down,
+      proposal.proposalType,
       proposal.contractAddress,
       getTime() < proposal.startDate, // isNotStarted
       getTime() >= proposal.endDate, // isExpired
@@ -89,7 +90,7 @@ contract Voting is Ownable, AccessToken, Anchors {
   function registerProposal(
     uint id,
     string memory title,
-    uint ProposalType,
+    uint proposalType,
     uint startDate,
     uint endDate,
     string memory url,
@@ -97,18 +98,18 @@ contract Voting is Ownable, AccessToken, Anchors {
     address contractAddress
     ) public onlyMembers useToken(1) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
-        proposals.push(Proposal(id, title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, contractAddress));
+        proposals.push(Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, contractAddress));
   }
 
   function registerInternalProposal(
     uint id,
     string memory title,
-    uint ProposalType,
+    uint proposalType,
     uint startDate,
     uint endDate,
     string memory url,
     bytes32 hashCode
     ) internal onlyMembers useToken(1) returns (uint) {
-        return proposals.push(Proposal(id, title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, address(this)));
+        return proposals.push(Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, address(this)));
   }
 }
