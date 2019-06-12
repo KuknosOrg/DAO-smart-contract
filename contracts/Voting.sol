@@ -24,6 +24,8 @@ contract Voting is Ownable, AccessToken {
 
   address[] public voters;
 
+  event newProposal( string title, uint index);
+
   constructor(address[] memory _voters, uint _voterTokensCount) AccessToken(_voterTokensCount) public {
     voters = _voters;
     renewToken(voters);
@@ -89,7 +91,8 @@ contract Voting is Ownable, AccessToken {
       uint endDate,
       string memory url,
       bytes32 hashCode) public onlyVoters useToken(1) {
-          proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0));
+          uint index = proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url, hashCode, getTime(), 0, 0));
+          emit newProposal(title, index);
   }
 
   function inVoters(address caller) private view returns (bool) {
