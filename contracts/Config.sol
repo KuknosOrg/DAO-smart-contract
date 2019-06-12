@@ -29,6 +29,6 @@ contract Config {
     }
 
     function setChangeConfig(uint value) internal {
-        changeConfig = value;
+        changeConfigThreshold = value;
     }
 }
