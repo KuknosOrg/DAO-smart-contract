@@ -1,8 +1,8 @@
-const Voting = artifacts.require("./Voting.sol")
+const DAO = artifacts.require("./KuknosDAO.sol")
 
 contract("Ownable", (accounts) => {
     var ct;
-    it("get instance", () => Voting.deployed().then(instance => ct = instance))
+    it("get instance", () => DAO.deployed().then(instance => ct = instance))
     it("check owner", () =>
         ct.owner()
             .then(owner => assert.equal(owner, accounts[0]))

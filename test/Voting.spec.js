@@ -1,24 +1,11 @@
-const Voting = artifacts.require("./Voting.sol")
-
-const inspect = (arg) => {
-    console.log(arg);
-    return arg;
-}
-
-const now = () => Math.floor(Date.now() / 1000);
-
-const daySeconds = () => (24 * 60 * 60);
-
-const addDay = (days) => (time) => time + (days * daySeconds());
-
-const zeroAddress = () => '0x0000000000000000000000000000000000000000';
-
+const DAO = artifacts.require("./KuknosDAO.sol")
+const { addDay, now, zeroAddress } = require("./utils");
 
 contract("Voting", (accounts) => {
     var ct;
 
     beforeEach(() => {
-        return Voting.deployed().then(instance => ct = instance)
+        return DAO.deployed().then(instance => ct = instance)
     })
 
     it("registerProposal", () =>

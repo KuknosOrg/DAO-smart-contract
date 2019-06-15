@@ -1,10 +1,10 @@
-const Voting = artifacts.require("./Voting.sol")
+const DAO = artifacts.require("./KuknosDAO.sol")
 
-contract("Voting", (accounts) => {
+contract("Members", (accounts) => {
     var ct;
     
     beforeEach(() => {
-        return Voting.deployed().then(instance => ct = instance)
+        return DAO.deployed().then(instance => ct = instance)
     })
 
     it("members count", () =>
