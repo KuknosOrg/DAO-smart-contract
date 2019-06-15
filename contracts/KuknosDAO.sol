@@ -33,9 +33,22 @@ contract KuknosDAO is Voting, Config {
 
     uint public internalProposalsCount = 0;
 
-    constructor(address[] memory _voters, uint _voterTokensCount) public Voting(_voters, _voterTokensCount) {
-
+    constructor(uint _voterTokensCount) public Voting(_voterTokensCount) {
     }
+
+    modifier inConfigMode() {
+        require(owner != address(0), "this contract is not in config mode");
+        _;
+    }
+
+    function addNewAnchor(string memory _name, string memory _url, address[] memory _members) public onlyOwner inConfigMode {
+        addAnchor(_name, _url, _members);
+    }
+
+    function contractIsActive() public view returns(bool) {
+        return owner == address(0);
+    }
+
 
     function checkProposalUpPercentage(uint _id, ProposalTypes pType) internal view returns(uint) {
         (,,,uint proposalType, address contractAddress,, bool isFinished, uint upPercentage,) = getProposalStatus(_id);

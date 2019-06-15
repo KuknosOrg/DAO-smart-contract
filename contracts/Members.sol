@@ -6,10 +6,6 @@ contract Members {
 
   address[] public members;
 
-  constructor(address[] memory _members) public {
-    members = _members;
-  }
-
   modifier onlyMembers() {
     require(inMembers(msg.sender),"only valid members can do this transaction");
     _;

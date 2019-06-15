@@ -25,7 +25,7 @@ contract Voting is Ownable, AccessToken, Anchors {
 
   mapping (uint => mapping(address => int8)) public votesReceived;
 
-  constructor(address[] memory _voters, uint _voterTokensCount) Members(_voters) AccessToken(_voterTokensCount) public {
+  constructor(uint _voterTokensCount) AccessToken(_voterTokensCount) public {
     renewToken(members, false);
   }
 
