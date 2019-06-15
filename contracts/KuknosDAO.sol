@@ -36,17 +36,12 @@ contract KuknosDAO is Voting, Config {
     constructor(uint _voterTokensCount) public Voting(_voterTokensCount) {
     }
 
-    modifier inConfigMode() {
-        require(owner != address(0), "this contract is not in config mode");
-        _;
-    }
-
-    function addNewAnchor(string memory _name, string memory _url, address[] memory _members) public onlyOwner inConfigMode {
+    function addNewAnchor(string memory _name, string memory _url, address[] memory _members) public onlyOwner {
         addAnchor(_name, _url, _members);
     }
 
     function contractIsActive() public view returns(bool) {
-        return owner == address(0);
+        return contractHasNoOwener();
     }
 
 

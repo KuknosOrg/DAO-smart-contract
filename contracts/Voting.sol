@@ -29,6 +29,12 @@ contract Voting is Ownable, AccessToken, Anchors {
     renewToken(members, false);
   }
 
+  modifier onlyMembers() {
+    require(contractHasNoOwener(), "this contract is in config mode");
+    require(inMembers(msg.sender),"only valid members can do this transaction");
+    _;
+  }
+
   function renewYearTokens() public onlyMembers  {
     renewToken(members, false);
   }

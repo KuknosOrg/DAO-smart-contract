@@ -6,11 +6,6 @@ contract Members {
 
   address[] public members;
 
-  modifier onlyMembers() {
-    require(inMembers(msg.sender),"only valid members can do this transaction");
-    _;
-  }
-
   function addMember(address member) internal {
       require(!inMembers(msg.sender),"dubpicate member");
       members.push(member);
@@ -28,7 +23,7 @@ contract Members {
       return members;
   }
 
-  function inMembers(address member) private view returns (bool) {
+  function inMembers(address member) internal view returns (bool) {
       return Utils.findIndex(members, member) >= 0;
   }
 

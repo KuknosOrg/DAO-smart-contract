@@ -60,4 +60,8 @@ contract Ownable {
     emit OwnershipTransferred(owner, _newOwner);
     owner = _newOwner;
   }
+
+  function contractHasNoOwener() internal view returns(bool) {
+    return owner == address(0);
+  }
 }
