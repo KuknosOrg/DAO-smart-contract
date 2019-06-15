@@ -14,7 +14,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint endDate;
     address author;
     string url;
-    bytes32 hashCode;
+    string hashCode;
     uint registerDate;
     uint up;
     uint down;
@@ -59,7 +59,7 @@ contract Voting is Ownable, AccessToken, Anchors {
   }
 
   function getProposal(uint index) public view returns (
-    uint, string memory, uint, uint, uint, address, string memory, bytes32, uint, uint, uint, address) {
+    uint, string memory, uint, uint, uint, address, string memory, string memory, uint, uint, uint, address) {
     Proposal memory proposal = proposals[index];
     return (
       proposal.id,
@@ -100,7 +100,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint startDate,
     uint endDate,
     string memory url,
-    bytes32 hashCode,
+    string memory hashCode,
     address contractAddress
     ) public onlyMembers useToken(1) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
@@ -114,7 +114,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint startDate,
     uint endDate,
     string memory url,
-    bytes32 hashCode
+    string memory hashCode
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, address(this)));
   }

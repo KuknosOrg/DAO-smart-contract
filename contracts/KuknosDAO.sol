@@ -61,7 +61,7 @@ contract KuknosDAO is Voting, Config {
       uint _startDate,
       uint _endDate,
       string memory _url,
-      bytes32 _hashCode
+      string memory _hashCode
       ) public onlyMembers {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
@@ -93,7 +93,7 @@ contract KuknosDAO is Voting, Config {
       uint _startDate,
       uint _endDate,
       string memory _url,
-      bytes32 _hashCode
+      string memory _hashCode
       ) public onlyMembers {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
@@ -125,7 +125,7 @@ contract KuknosDAO is Voting, Config {
       uint _startDate,
       uint _endDate,
       string memory _url,
-      bytes32 _hashCode
+      string memory _hashCode
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
