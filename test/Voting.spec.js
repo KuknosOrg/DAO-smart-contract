@@ -30,7 +30,7 @@ contract("Voting", (accounts) => {
     it("registerProposal", () =>
         ct.balanceOf(accounts[0])
             .then(balance => assert.equal(balance, 50))
-            .then(() => ct.registerProposal("test", 1, addDay(-1)(now()), addDay(8)(now()), "http://test.com", new Uint32Array(), {
+            .then(() => ct.registerProposal("test", 1, addDay(-1)(now()), addDay(8)(now()), "http://test.com", "123456", {
                 from: accounts[0]
             }))
             .then(() => ct.getProposal(0))

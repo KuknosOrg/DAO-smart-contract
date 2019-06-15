@@ -12,7 +12,7 @@ contract Voting is Ownable, AccessToken {
       uint endDate;
       address author;
       string url;
-      bytes32 hashCode;
+      string hashCode;
       uint registerDate;
       uint up;
       uint down;
@@ -64,7 +64,8 @@ contract Voting is Ownable, AccessToken {
       return proposals.length;
   }
 
-  function getProposal(uint index) public view returns (string memory, uint , uint, uint, address, string memory, bytes32, uint, uint, uint ) {
+  function getProposal(uint index) public view returns (
+      string memory, uint , uint, uint, address, string memory, string memory, uint, uint, uint ) {
       Proposal memory proposal = proposals[index];
       return (
           proposal.title,
@@ -90,7 +91,7 @@ contract Voting is Ownable, AccessToken {
       uint startDate,
       uint endDate,
       string memory url,
-      bytes32 hashCode) public onlyVoters useToken(1) {
+      string memory hashCode) public onlyVoters useToken(1) {
           uint index = proposals.push(Proposal(title, ProposalType, startDate, endDate, msg.sender, url, hashCode, getTime(), 0, 0));
           emit newProposal(title, index);
   }
