@@ -15,9 +15,14 @@ contract Anchors is Members {
     // each anchor maximum members count
     uint maxmMembersCount = 2;
 
-    Anchor[] anchors;
+    Anchor[] public anchors;
 
     mapping( bytes32 => address[] ) anchorMembers;
+
+    function getAnchorsCount() public view returns(uint) {
+        return anchors.length;
+    }
+
 
     function addAnchor(string memory _name, string memory _url, address[] memory _members) internal {
         bytes32 nameHash = Utils.strToHash(_name);

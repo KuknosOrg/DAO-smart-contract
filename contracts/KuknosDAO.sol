@@ -37,7 +37,12 @@ contract KuknosDAO is Voting, Config {
     }
 
     function addNewAnchor(string memory _name, string memory _url, address[] memory _members) public onlyOwner {
+        addAnchorWithToken(_name, _url, _members);
+    }
+
+    function addAnchorWithToken(string memory _name, string memory _url, address[] memory _members) internal {
         addAnchor(_name, _url, _members);
+        issueAccessToken(_members, accessTokensCount);
     }
 
     function contractIsActive() public view returns(bool) {
@@ -82,7 +87,7 @@ contract KuknosDAO is Voting, Config {
         require(proposal.executionTime == 0, "the proposal executed before");
         uint upPercentage = checkProposalUpPercentage(_id, ProposalTypes.AddAnchor);
         if (upPercentage >= addAnchorThreshold) {
-            addAnchor(proposal.name, proposal.url, proposal.members);
+            addAnchorWithToken(proposal.name, proposal.url, proposal.members);
         }
         addAnchorProposals[_id].executionTime = getTime();
     }

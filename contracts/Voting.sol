@@ -21,12 +21,11 @@ contract Voting is Ownable, AccessToken, Anchors {
     address contractAddress;
   }
 
-  Proposal[] proposals;
+  Proposal[] public proposals;
 
   mapping (uint => mapping(address => int8)) public votesReceived;
 
   constructor(uint _voterTokensCount) AccessToken(_voterTokensCount) public {
-    renewToken(members, false);
   }
 
   modifier onlyMembers() {
@@ -56,25 +55,6 @@ contract Voting is Ownable, AccessToken, Anchors {
   }
   function getProposalsCount() public view returns (uint) {
     return proposals.length;
-  }
-
-  function getProposal(uint index) public view returns (
-    uint, string memory, uint, uint, uint, address, string memory, string memory, uint, uint, uint, address) {
-    Proposal memory proposal = proposals[index];
-    return (
-      proposal.id,
-      proposal.title,
-      proposal.proposalType,
-      proposal.startDate,
-      proposal.endDate,
-      proposal.author,
-      proposal.url,
-      proposal.hashCode,
-      proposal.registerDate,
-      proposal.up,
-      proposal.down,
-      proposal.contractAddress
-    );
   }
 
   function getProposalStatus(uint index) public view returns ( uint, uint, uint, uint, address, bool, bool, uint, uint ) {

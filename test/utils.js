@@ -1,5 +1,5 @@
-const inspect = (arg) => {
-    console.log(arg);
+const inspect = (tag) => (arg) => {
+    console.log(tag, arg);
     return arg;
 }
 
