@@ -17,7 +17,7 @@ contract Anchors is Members {
 
     Anchor[] public anchors;
 
-    mapping( bytes32 => address[] ) anchorMembers;
+    mapping( bytes32 => address[] ) public anchorMembers;
 
     function getAnchorsCount() public view returns(uint) {
         return anchors.length;
