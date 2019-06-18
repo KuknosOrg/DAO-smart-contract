@@ -1,6 +1,6 @@
 const DAO = artifacts.require("./KuknosDAO.sol")
-const { addDay, now, zeroAddress } = require("./utils");
-const { getContract } = require("./configContract");
+const { addDay, now, zeroAddress } = require("./config/utils");
+const { getContract } = require("./config/configContract");
 
 contract("Voting", (accounts) => {
     var ct;

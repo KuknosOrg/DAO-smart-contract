@@ -1,6 +1,4 @@
 
-const { wait, inspect } = require("./utils");
-
 const config = (ct, accounts, anchors = ["sadad", "tosan"]) => {
     const addAnchor = (owner) => (chain, name, index) =>
         chain.then(() => ct.addNewAnchor(name, `http://${name}.test`, [accounts[(index * 2) + 1], accounts[(index * 2) + 2]], {
@@ -9,11 +7,12 @@ const config = (ct, accounts, anchors = ["sadad", "tosan"]) => {
 
     return Promise.resolve()
         .then(() => ct.owner())
-        .then((owner) => anchors.reduce(addAnchor(owner), Promise.resolve()))
-        .then(() => ct.owner())
-        .then((owner) => (ct.renounceOwnership({
-            from: owner.toString()
-        })));
+        .then((owner) =>
+            anchors.reduce(addAnchor(owner), Promise.resolve())
+                .then((owner) => (ct.renounceOwnership({
+                    from: owner.toString()
+                })))
+        );
 }
 
 const getContract = (Contract, accounts) => {
