@@ -26,6 +26,11 @@ contract("Voting", (accounts) => {
                 assert.equal(proposal.up, 1);
                 assert.equal(proposal.down, 1);
             })
+            .then(() => ct.getProposalStatus(0))
+            .then((proposal) => {
+                assert.equal(proposal[1], 1);
+                assert.equal(proposal[2], 1);
+            })
     )
 
 })
