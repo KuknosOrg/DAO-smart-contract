@@ -2,6 +2,14 @@ pragma solidity >=0.4.21 <0.6.0;
 
 contract Config {
 
+    enum ChangeConfigType {
+        AddAnchorThreshold,
+        RemoveAnchorThreshold,
+        RenewAccessTokenThreshold,
+        ChangeAnchorMemberThreshold,
+        ChangeConfigThreshold
+    }
+
     uint public addAnchorThreshold = 51;
 
     uint public removeAnchorThreshold = 80;
@@ -12,23 +20,27 @@ contract Config {
 
     uint public changeConfigThreshold = 80;
 
-    function setAddAnchorThreshold(uint value) internal {
-        addAnchorThreshold = value;
+    function setConfig(ChangeConfigType configType, uint value) internal {
+        
+        if(configType == ChangeConfigType.AddAnchorThreshold) {
+             addAnchorThreshold = value;
+        }
+    
+        if(configType == ChangeConfigType.RemoveAnchorThreshold) {
+            removeAnchorThreshold = value;
+        }
+
+        if(configType == ChangeConfigType.RenewAccessTokenThreshold) {
+             renewAccessTokenThreshold = value;
+        }
+
+        if(configType == ChangeConfigType.ChangeAnchorMemberThreshold) {
+            changeAnchorMemberThreshold = value;
+        }
+
+        if(configType == ChangeConfigType.ChangeConfigThreshold) {
+            changeConfigThreshold = value;
+        }
     }
 
-    function setRemoveAnchorThreshold(uint value) internal {
-        removeAnchorThreshold = value;
-    }
-
-    function setRenewAccessTokenThreshold(uint value) internal {
-        renewAccessTokenThreshold = value;
-    }
-
-    function setcChangeAnchorMemberThreshold(uint value) internal {
-        changeAnchorMemberThreshold = value;
-    }
-
-    function setChangeConfig(uint value) internal {
-        changeConfigThreshold = value;
-    }
 }
