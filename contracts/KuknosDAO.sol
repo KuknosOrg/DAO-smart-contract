@@ -188,7 +188,7 @@ contract KuknosDAO is Voting, Config {
           changeConfigProposal[id] = ChangeConfigProposal("change config", newValue, 0);
     }
 
-    function runchaneConfigProposal(uint _id) internal onlyMembers {
+    function runChaneConfigProposal(uint _id) internal onlyMembers {
         ChangeConfigProposal memory proposal = changeConfigProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
