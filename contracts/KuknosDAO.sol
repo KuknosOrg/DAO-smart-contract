@@ -90,7 +90,7 @@ contract KuknosDAO is Voting, Config {
           addAnchorProposals[id] = AddAnchorProposal(_anchorName, _anchorUrl, _members, 0);
     }
 
-    function runAddAnchorProposal(uint _id) internal onlyMembers {
+    function runAddAnchorProposal(uint _id) public onlyMembers {
         AddAnchorProposal memory proposal = addAnchorProposals[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
@@ -123,7 +123,7 @@ contract KuknosDAO is Voting, Config {
           removeAnchorProposal[id] = RemoveAnchorProposal(_anchorName, 0);
     }
 
-    function runRemoveAnchorProposal(uint _id) internal onlyMembers {
+    function runRemoveAnchorProposal(uint _id) public onlyMembers {
         RemoveAnchorProposal memory proposal = removeAnchorProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
@@ -155,7 +155,7 @@ contract KuknosDAO is Voting, Config {
           renewAccessTockenProposal[id] = RenewAccessTockenProposal("set access tocken", count, 0);
     }
 
-    function runSetAccessTockenProposal(uint _id) internal onlyMembers {
+    function runSetAccessTockenProposal(uint _id) public onlyMembers {
         RenewAccessTockenProposal memory proposal = renewAccessTockenProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
@@ -168,7 +168,7 @@ contract KuknosDAO is Voting, Config {
 
 
     // set AccessToken proposal
-    function changeConfigProposal(
+    function addChangeConfigProposal(
       uint newValue,
       uint _startDate,
       uint _endDate,
@@ -188,7 +188,7 @@ contract KuknosDAO is Voting, Config {
           changeConfigProposal[id] = ChangeConfigProposal("change config", newValue, 0);
     }
 
-    function runChangeConfigProposal(uint _id) internal onlyMembers {
+    function runChangeConfigProposal(uint _id) public onlyMembers {
         ChangeConfigProposal memory proposal = changeConfigProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
