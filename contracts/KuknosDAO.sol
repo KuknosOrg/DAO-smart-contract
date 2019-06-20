@@ -168,7 +168,7 @@ contract KuknosDAO is Voting, Config {
 
 
     // set AccessToken proposal
-    function chaneConfigProposal(
+    function changeConfigProposal(
       uint newValue,
       uint _startDate,
       uint _endDate,
@@ -188,7 +188,7 @@ contract KuknosDAO is Voting, Config {
           changeConfigProposal[id] = ChangeConfigProposal("change config", newValue, 0);
     }
 
-    function runChaneConfigProposal(uint _id) internal onlyMembers {
+    function runChangeConfigProposal(uint _id) internal onlyMembers {
         ChangeConfigProposal memory proposal = changeConfigProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
