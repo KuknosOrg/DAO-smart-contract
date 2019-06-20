@@ -10,22 +10,22 @@ contract Config {
         ChangeConfigThreshold
     }
 
-    uint public addAnchorThreshold = 51;
+    uint8 public addAnchorThreshold = 51;
 
-    uint public removeAnchorThreshold = 80;
+    uint8 public removeAnchorThreshold = 80;
 
-    uint public renewAccessTokenThreshold = 51;
+    uint8 public renewAccessTokenThreshold = 51;
 
-    uint public changeAnchorMemberThreshold = 51;
+    uint8 public changeAnchorMemberThreshold = 51;
 
-    uint public changeConfigThreshold = 80;
+    uint8 public changeConfigThreshold = 80;
 
-    function setConfig(ChangeConfigType configType, uint value) internal {
-        
+    function setConfig(ChangeConfigType configType, uint8 value) internal {
+
         if(configType == ChangeConfigType.AddAnchorThreshold) {
              addAnchorThreshold = value;
         }
-    
+
         if(configType == ChangeConfigType.RemoveAnchorThreshold) {
             removeAnchorThreshold = value;
         }

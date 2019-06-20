@@ -7,19 +7,18 @@ import "./Anchors.sol";
 contract Voting is Ownable, AccessToken, Anchors {
 
   struct Proposal {
-    uint id;
     string title;
-    uint proposalType;
-    uint startDate;
-    uint endDate;
+    uint32 proposalType;
+    uint32 startDate;
+    uint32 endDate;
     address author;
     string url;
     string hashCode;
-    uint registerDate;
-    uint up;
-    uint down;
+    uint32 registerDate;
+    uint16 up;
+    uint16 down;
     address contractAddress;
-    uint threshold;
+    uint8 threshold;
   }
 
   Proposal[] public proposals;
@@ -31,7 +30,7 @@ contract Voting is Ownable, AccessToken, Anchors {
 
   modifier onlyMembers() {
     require(contractHasNoOwener(), "this contract is in config mode");
-    require(inMembers(msg.sender),"only valid members can do this transaction");
+    require(inMembers(msg.sender), "only valid members can do this transaction");
     _;
   }
 
@@ -58,53 +57,47 @@ contract Voting is Ownable, AccessToken, Anchors {
     return proposals.length;
   }
 
-  function getProposalStatus(uint index) public view returns ( uint, uint, uint, uint, address, bool, bool, uint, uint, bool ) {
-    uint total = proposals[index].up + proposals[index].down;
-    uint up = proposals[index].up * 100 / total;
-    uint down = proposals[index].up * 100 / total;
+  function getProposalStatus(uint index) public view returns ( uint, uint, uint, address, bool, bool, bool ) {
+    Proposal memory proposal = proposals[index];
+    uint total = proposal.up + proposal.down;
     return (
-      proposals[index].id,
-      proposals[index].up,
-      proposals[index].down,
-      proposals[index].proposalType,
-      proposals[index].contractAddress,
-      getTime() < proposals[index].startDate, // isNotStarted
-      getTime() >= proposals[index].endDate, // isExpired
-      up, // up percentage
-      down, // down percentage
-      up >= proposals[index].threshold
+      proposal.up,
+      proposal.down,
+      proposal.proposalType,
+      proposal.contractAddress,
+      getTime() < proposal.startDate, // isNotStarted
+      getTime() >= proposal.endDate, // isExpired
+      (proposal.up * 100 / total) >= proposals[index].threshold
     );
   }
 
   function registerProposal(
-    uint id,
     string memory title,
-    uint proposalType,
-    uint startDate,
-    uint endDate,
+    uint32 proposalType,
+    uint32 startDate,
+    uint32 endDate,
     string memory url,
     string memory hashCode,
     address contractAddress,
-    uint threshold
+    uint8 threshold
     ) public onlyMembers useToken(1) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
         proposals.push(
-          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, contractAddress,threshold)
+          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
         );
   }
 
   function registerInternalProposal(
-    uint id,
     string memory title,
-    uint proposalType,
-    uint startDate,
-    uint endDate,
+    uint32 proposalType,
+    uint32 startDate,
+    uint32 endDate,
     string memory url,
     string memory hashCode,
-    uint threshold
+    uint8 threshold
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(
-          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, getTime(), 0, 0, address(this),threshold)
+          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold)
         );
   }
 }

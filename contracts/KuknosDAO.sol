@@ -27,7 +27,7 @@ contract KuknosDAO is Voting, Config {
 
     struct ChangeConfigProposal {
         string name;
-        uint value;
+        uint8 value;
         uint executionTime;
     }
 
@@ -58,12 +58,12 @@ contract KuknosDAO is Voting, Config {
     }
 
 
-    function checkProposalUpPercentage(uint _id, ProposalTypes pType) internal view returns(uint) {
-        (,,,uint proposalType, address contractAddress,, bool isFinished, uint upPercentage,,) = getProposalStatus(_id);
+    function checkProposalResult(uint _id, ProposalTypes pType) internal view returns(bool) {
+        (,,uint proposalType, address contractAddress,, bool isFinished, bool successFull) = getProposalStatus(_id);
         require(proposalType == uint(pType), "type mismatch");
         require(contractAddress == address(this), "the propsal is not an internal proposal");
         require(isFinished,"the propsal is not finished");
-        return upPercentage;
+        return successFull;
     }
 
     // Add new Anchor Proposal
@@ -71,17 +71,16 @@ contract KuknosDAO is Voting, Config {
       string memory _anchorName,
       string memory _anchorUrl,
       address[] memory _members,
-      uint _startDate,
-      uint _endDate,
+      uint32 _startDate,
+      uint32 _endDate,
       string memory _url,
       string memory _hashCode
       ) public onlyMembers {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
           uint id = registerInternalProposal(
-              internalProposalsCount,
               "add anchor",
-              uint(ProposalTypes.AddAnchor),
+              uint32(ProposalTypes.AddAnchor),
               _startDate,
               _endDate,
               _url,
@@ -94,8 +93,7 @@ contract KuknosDAO is Voting, Config {
         AddAnchorProposal memory proposal = addAnchorProposals[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
-        uint upPercentage = checkProposalUpPercentage(_id, ProposalTypes.AddAnchor);
-        if (upPercentage >= proposals[_id].threshold) {
+        if (checkProposalResult(_id, ProposalTypes.AddAnchor)) {
             addAnchorWithToken(proposal.name, proposal.url, proposal.members);
         }
         addAnchorProposals[_id].executionTime = getTime();
@@ -104,17 +102,16 @@ contract KuknosDAO is Voting, Config {
     // Remove an anchor proposal
     function registerRemoveAnchorProposal(
       string memory _anchorName,
-      uint _startDate,
-      uint _endDate,
+      uint32 _startDate,
+      uint32 _endDate,
       string memory _url,
       string memory _hashCode
       ) public onlyMembers {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
           uint id = registerInternalProposal(
-              internalProposalsCount,
               "remove anchor",
-              uint(ProposalTypes.RemoveAnchor),
+              uint32(ProposalTypes.RemoveAnchor),
               _startDate,
               _endDate,
               _url,
@@ -127,8 +124,7 @@ contract KuknosDAO is Voting, Config {
         RemoveAnchorProposal memory proposal = removeAnchorProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
-        uint upPercentage = checkProposalUpPercentage(_id, ProposalTypes.RemoveAnchor);
-        if (upPercentage >= proposals[_id].threshold) {
+        if (checkProposalResult(_id, ProposalTypes.RemoveAnchor)) {
             deleteAnchor(proposal.name);
         }
         removeAnchorProposal[_id].executionTime = getTime();
@@ -137,16 +133,15 @@ contract KuknosDAO is Voting, Config {
     // set AccessToken proposal
     function registerSetAccessTokenProposal(
       uint count,
-      uint _startDate,
-      uint _endDate,
+      uint32 _startDate,
+      uint32 _endDate,
       string memory _url,
       string memory _hashCode
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
-              internalProposalsCount,
               "set access tocken",
-              uint(ProposalTypes.RenewAccessToken),
+              uint32(ProposalTypes.RenewAccessToken),
               _startDate,
               _endDate,
               _url,
@@ -159,8 +154,7 @@ contract KuknosDAO is Voting, Config {
         RenewAccessTockenProposal memory proposal = renewAccessTockenProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
-        uint upPercentage = checkProposalUpPercentage(_id, ProposalTypes.RenewAccessToken);
-        if (upPercentage >= proposals[_id].threshold) {
+        if (checkProposalResult(_id, ProposalTypes.RenewAccessToken)) {
             renewToken(members, true);
         }
         renewAccessTockenProposal[_id].executionTime = getTime();
@@ -169,17 +163,16 @@ contract KuknosDAO is Voting, Config {
 
     // set AccessToken proposal
     function addChangeConfigProposal(
-      uint newValue,
-      uint _startDate,
-      uint _endDate,
+      uint8 newValue,
+      uint32 _startDate,
+      uint32 _endDate,
       string memory _url,
       string memory _hashCode
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
-              internalProposalsCount,
               "change config",
-              uint(ProposalTypes.ChangeConfig),
+              uint32(ProposalTypes.ChangeConfig),
               _startDate,
               _endDate,
               _url,
@@ -192,8 +185,7 @@ contract KuknosDAO is Voting, Config {
         ChangeConfigProposal memory proposal = changeConfigProposal[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
-        uint upPercentage = checkProposalUpPercentage(_id, ProposalTypes.ChangeConfig);
-        if (upPercentage >= proposals[_id].threshold) {
+        if (checkProposalResult(_id, ProposalTypes.ChangeConfig)) {
             renewToken(members, true);
         }
         renewAccessTockenProposal[_id].executionTime = getTime();
