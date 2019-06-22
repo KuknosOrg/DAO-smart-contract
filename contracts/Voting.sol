@@ -7,6 +7,7 @@ import "./Anchors.sol";
 contract Voting is Ownable, AccessToken, Anchors {
 
   struct Proposal {
+    uint id;
     string title;
     uint32 proposalType;
     uint32 startDate;
@@ -19,10 +20,9 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint16 down;
     address contractAddress;
     uint8 threshold;
-    uint id;
   }
 
-  Proposal[] public proposals;
+  Proposal[] proposals;
 
   mapping (uint => mapping(address => int8)) public votesReceived;
 
@@ -55,32 +55,30 @@ contract Voting is Ownable, AccessToken, Anchors {
     }
   }
 
-  function getProposal(uint index) public view returns ( 
-    string memory,
-    uint32,
-    uint32,
-    uint32,
-    address,
-    string memory,
-    string memory,
-    uint32,
-    address,
-    uint8,
-    uint
+  function getProposal(uint index) public view returns (
+    string memory title,
+    uint32 proposalType,
+    uint32 registerDate,
+    uint32 startDate,
+    uint32 endDate,
+    address author,
+    string memory url,
+    string memory hashCode,
+    address contractAddress,
+    uint8 threshold
     ) {
     Proposal memory proposal = proposals[index];
     return (
-      proposal.title,
-      proposal.proposalType,
-      proposal.startDate,
-      proposal.endDate,
-      proposal.author,
-      proposal.url,
-      proposal.hashCode,
-      proposal.registerDate,
-      proposal.contractAddress,
-      proposal.threshold,
-      proposal.id
+        proposal.title,
+        proposal.proposalType,
+        proposal.registerDate,
+        proposal.startDate,
+        proposal.endDate,
+        proposal.author,
+        proposal.url,
+        proposal.hashCode,
+        proposal.contractAddress,
+        proposal.threshold
     );
   }
 
@@ -88,23 +86,35 @@ contract Voting is Ownable, AccessToken, Anchors {
     return proposals.length;
   }
 
-  function getProposalStatus(uint index) public view returns ( uint, uint, uint, address, bool, bool,uint,uint, bool ) {
+  function getProposalStatus(uint index) public view returns (
+    uint id ,
+    uint16 up,
+    uint16 down,
+    uint32 proposalType,
+    address contractAddress,
+    bool isNotStarted,
+    bool isExpired,
+    uint16 upPercentage,
+    uint16 downPercentage,
+    bool isSucceed ) {
     Proposal memory proposal = proposals[index];
     uint total = proposal.up + proposal.down;
     return (
+      proposal.id,
       proposal.up,
       proposal.down,
       proposal.proposalType,
       proposal.contractAddress,
       getTime() < proposal.startDate, // isNotStarted
       getTime() >= proposal.endDate, // isExpired
-      proposal.up * 100 / total,
-      proposal.up * 100 / total,
+      uint16(proposal.up * 100 / total),
+      uint16(proposal.down * 100 / total),
       (proposal.up * 100 / total) >= proposal.threshold
     );
   }
 
   function registerProposal(
+    uint id,
     string memory title,
     uint32 proposalType,
     uint32 startDate,
@@ -116,11 +126,12 @@ contract Voting is Ownable, AccessToken, Anchors {
     ) public onlyMembers useToken(1) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
         proposals.push(
-          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold,0)
+          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
         );
   }
 
   function registerInternalProposal(
+    uint id,
     string memory title,
     uint32 proposalType,
     uint32 startDate,
@@ -130,7 +141,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint8 threshold
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(
-          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold,0)
+          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold)
         );
   }
 }

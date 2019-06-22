@@ -15,7 +15,7 @@ contract("KuknosDAO", (accounts) => {
             .then(() => ct.registerAddAnchorProposal("anchor", "http://anchor.test", [accounts[8], accounts[9]], addDay(-1)(now()), addDay(8)(now()), "http://test.com", "123", {
                 from: accounts[1]
             }))
-            .then(() => ct.proposals(0))
+            .then(() => ct.getProposal(0))
             .then((proposal) => assert.equal(proposal.title, "add anchor"))
             .then(() => ct.balanceOf(accounts[1]))
             .then(balance => assert.equal(balance, 49))

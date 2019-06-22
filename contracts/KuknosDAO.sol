@@ -59,7 +59,7 @@ contract KuknosDAO is Voting, Config {
 
 
     function checkProposalResult(uint _id, ProposalTypes pType) internal view returns(bool) {
-        (,,uint proposalType, address contractAddress,, bool isFinished,,,bool successFull) = getProposalStatus(_id);
+        (,,,uint32 proposalType, address contractAddress,, bool isFinished,,,bool successFull) = getProposalStatus(_id);
         require(proposalType == uint(pType), "type mismatch");
         require(contractAddress == address(this), "the propsal is not an internal proposal");
         require(isFinished,"the propsal is not finished");
@@ -79,6 +79,7 @@ contract KuknosDAO is Voting, Config {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
           uint id = registerInternalProposal(
+              internalProposalsCount,
               "add anchor",
               uint32(ProposalTypes.AddAnchor),
               _startDate,
@@ -110,6 +111,7 @@ contract KuknosDAO is Voting, Config {
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
           uint id = registerInternalProposal(
+              internalProposalsCount,
               "remove anchor",
               uint32(ProposalTypes.RemoveAnchor),
               _startDate,
@@ -140,6 +142,7 @@ contract KuknosDAO is Voting, Config {
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
+              internalProposalsCount,
               "set access tocken",
               uint32(ProposalTypes.RenewAccessToken),
               _startDate,
@@ -171,6 +174,7 @@ contract KuknosDAO is Voting, Config {
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
+              internalProposalsCount,
               "change config",
               uint32(ProposalTypes.ChangeConfig),
               _startDate,

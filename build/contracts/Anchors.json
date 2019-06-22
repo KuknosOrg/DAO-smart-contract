@@ -113,15 +113,15 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"membersCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"anchors\",\"outputs\":[{\"name\":\"nameHash\",\"type\":\"bytes32\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"url\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"members\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"},{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"anchorMembers\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAnchorsCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"membersList\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Anchors.sol\":\"Anchors\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0xb25f19038123b1e757af2cde9ae92eee7bd23be2bce1e4f8ebdaa598e883ee6d\",\"urls\":[\"bzzr://1cb2ceba27ed2fae4c38838f049a82e18d324e6059074b0d1ccd3c0bb863e8ed\"]},\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Anchors.sol\":{\"keccak256\":\"0xfbb4ffbb336b72703b8391678568d85b5ff93a256a02d29ad64fd8994816d6b0\",\"urls\":[\"bzzr://9bb8d0abb380db6a7bbb086d7c134c188c24241c462810b156f6db13dd86ec99\"]},\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Members.sol\":{\"keccak256\":\"0x00bf1b2e2a148f5047a9b4afb710b862f305fa7a33c55dc33e0a424c67b7e536\",\"urls\":[\"bzzr://9a6fcc8cf474e4a869f8161daeee13a904492d260cc4c337019be0e93b5f0748\"]},\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/library/Utils.sol\":{\"keccak256\":\"0x23bf84ac7702dcce658ae1f8bf529619b196932308a77595cdca94d6884b3705\",\"urls\":[\"bzzr://076019d288d3d3aa7bddbbb9081174e6be911a50117e1431a598ed612b39a7db\"]}},\"version\":1}",
-  "bytecode": "0x6080604052600260015534801561001557600080fd5b506105c3806100256000396000f3fe608060405234801561001057600080fd5b50600436106100625760003560e01c8063297f9af014610067578063368b733e146100855780635daf08ca1461019f578063a773693f1461020d578063d4c8ca9b14610285578063dd5042f4146102a3575b600080fd5b61006f610302565b6040518082815260200191505060405180910390f35b6100b16004803603602081101561009b57600080fd5b810190808035906020019092919050505061030e565b604051808481526020018060200180602001838103835285818151815260200191508051906020019080838360005b838110156100fb5780820151818401526020810190506100e0565b50505050905090810190601f1680156101285780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b83811015610161578082015181840152602081019050610146565b50505050905090810190601f16801561018e5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6101cb600480360360208110156101b557600080fd5b8101908080359060200190929190505050610475565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102436004803603604081101561022357600080fd5b8101908080359060200190929190803590602001909291905050506104b1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61028d6104fc565b6040518082815260200191505060405180910390f35b6102ab610509565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156102ee5780820151818401526020810190506102d3565b505050509050019250505060405180910390f35b60008080549050905090565b6002818154811061031b57fe5b9060005260206000209060030201600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103cd5780601f106103a2576101008083540402835291602001916103cd565b820191906000526020600020905b8154815290600101906020018083116103b057829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561046b5780601f106104405761010080835404028352916020019161046b565b820191906000526020600020905b81548152906001019060200180831161044e57829003601f168201915b5050505050905083565b6000818154811061048257fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360205281600052604060002081815481106104ca57fe5b906000526020600020016000915091509054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600280549050905090565b6060600080548060200260200160405190810160405280929190818152602001828054801561058d57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610543575b505050505090509056fea165627a7a723058200f5acbf88161275c197c03cb5b4f997ff49cf08f54e0ca41e94a5a838456c5170029",
-  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100625760003560e01c8063297f9af014610067578063368b733e146100855780635daf08ca1461019f578063a773693f1461020d578063d4c8ca9b14610285578063dd5042f4146102a3575b600080fd5b61006f610302565b6040518082815260200191505060405180910390f35b6100b16004803603602081101561009b57600080fd5b810190808035906020019092919050505061030e565b604051808481526020018060200180602001838103835285818151815260200191508051906020019080838360005b838110156100fb5780820151818401526020810190506100e0565b50505050905090810190601f1680156101285780820380516001836020036101000a031916815260200191505b50838103825284818151815260200191508051906020019080838360005b83811015610161578082015181840152602081019050610146565b50505050905090810190601f16801561018e5780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b6101cb600480360360208110156101b557600080fd5b8101908080359060200190929190505050610475565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b6102436004803603604081101561022357600080fd5b8101908080359060200190929190803590602001909291905050506104b1565b604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390f35b61028d6104fc565b6040518082815260200191505060405180910390f35b6102ab610509565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b838110156102ee5780820151818401526020810190506102d3565b505050509050019250505060405180910390f35b60008080549050905090565b6002818154811061031b57fe5b9060005260206000209060030201600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103cd5780601f106103a2576101008083540402835291602001916103cd565b820191906000526020600020905b8154815290600101906020018083116103b057829003601f168201915b505050505090806002018054600181600116156101000203166002900480601f01602080910402602001604051908101604052809291908181526020018280546001816001161561010002031660029004801561046b5780601f106104405761010080835404028352916020019161046b565b820191906000526020600020905b81548152906001019060200180831161044e57829003601f168201915b5050505050905083565b6000818154811061048257fe5b906000526020600020016000915054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b600360205281600052604060002081815481106104ca57fe5b906000526020600020016000915091509054906101000a900473ffffffffffffffffffffffffffffffffffffffff1681565b6000600280549050905090565b6060600080548060200260200160405190810160405280929190818152602001828054801561058d57602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610543575b505050505090509056fea165627a7a723058200f5acbf88161275c197c03cb5b4f997ff49cf08f54e0ca41e94a5a838456c5170029",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"membersCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"anchors\",\"outputs\":[{\"name\":\"nameHash\",\"type\":\"bytes32\"},{\"name\":\"name\",\"type\":\"string\"},{\"name\":\"url\",\"type\":\"string\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"members\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"bytes32\"},{\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"anchorMembers\",\"outputs\":[{\"name\":\"\",\"type\":\"address\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"getAnchorsCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"membersList\",\"outputs\":[{\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/projects/blockchain/kuknos-dao/contracts/Anchors.sol\":\"Anchors\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0xb25f19038123b1e757af2cde9ae92eee7bd23be2bce1e4f8ebdaa598e883ee6d\",\"urls\":[\"bzzr://1cb2ceba27ed2fae4c38838f049a82e18d324e6059074b0d1ccd3c0bb863e8ed\"]},\"/D/projects/blockchain/kuknos-dao/contracts/Anchors.sol\":{\"keccak256\":\"0xfbb4ffbb336b72703b8391678568d85b5ff93a256a02d29ad64fd8994816d6b0\",\"urls\":[\"bzzr://9bb8d0abb380db6a7bbb086d7c134c188c24241c462810b156f6db13dd86ec99\"]},\"/D/projects/blockchain/kuknos-dao/contracts/Members.sol\":{\"keccak256\":\"0x00bf1b2e2a148f5047a9b4afb710b862f305fa7a33c55dc33e0a424c67b7e536\",\"urls\":[\"bzzr://9a6fcc8cf474e4a869f8161daeee13a904492d260cc4c337019be0e93b5f0748\"]},\"/D/projects/blockchain/kuknos-dao/contracts/library/Utils.sol\":{\"keccak256\":\"0x23bf84ac7702dcce658ae1f8bf529619b196932308a77595cdca94d6884b3705\",\"urls\":[\"bzzr://076019d288d3d3aa7bddbbb9081174e6be911a50117e1431a598ed612b39a7db\"]}},\"version\":1}",
+  "bytecode": "0x6080604052600260015534801561001557600080fd5b5061052b806100256000396000f3fe6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663297f9af0811461007c578063368b733e146100a35780635daf08ca146101b2578063a773693f14610205578063d4c8ca9b14610235578063dd5042f41461024a575b600080fd5b34801561008857600080fd5b506100916102af565b60408051918252519081900360200190f35b3480156100af57600080fd5b506100cd600480360360208110156100c657600080fd5b50356102b5565b604051808481526020018060200180602001838103835285818151815260200191508051906020019080838360005b838110156101145781810151838201526020016100fc565b50505050905090810190601f1680156101415780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b8381101561017457818101518382015260200161015c565b50505050905090810190601f1680156101a15780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b3480156101be57600080fd5b506101dc600480360360208110156101d557600080fd5b5035610411565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561021157600080fd5b506101dc6004803603604081101561022857600080fd5b5080359060200135610446565b34801561024157600080fd5b5061009161048a565b34801561025657600080fd5b5061025f610490565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561029b578181015183820152602001610283565b505050509050019250505060405180910390f35b60005490565b60028054829081106102c357fe5b9060005260206000209060030201600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103755780601f1061034a57610100808354040283529160200191610375565b820191906000526020600020905b81548152906001019060200180831161035857829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156104075780601f106103dc57610100808354040283529160200191610407565b820191906000526020600020905b8154815290600101906020018083116103ea57829003601f168201915b5050505050905083565b600080548290811061041f57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b60036020528160005260406000208181548110151561046157fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff169150829050565b60025490565b606060008054806020026020016040519081016040528092919081815260200182805480156104f557602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff1681526001909101906020018083116104ca575b505050505090509056fea165627a7a72305820dc70e917e593466b14e56d8e7d32e61b8f4143c1e2f085270d2f19e922db869f0029",
+  "deployedBytecode": "0x6080604052600436106100775763ffffffff7c0100000000000000000000000000000000000000000000000000000000600035041663297f9af0811461007c578063368b733e146100a35780635daf08ca146101b2578063a773693f14610205578063d4c8ca9b14610235578063dd5042f41461024a575b600080fd5b34801561008857600080fd5b506100916102af565b60408051918252519081900360200190f35b3480156100af57600080fd5b506100cd600480360360208110156100c657600080fd5b50356102b5565b604051808481526020018060200180602001838103835285818151815260200191508051906020019080838360005b838110156101145781810151838201526020016100fc565b50505050905090810190601f1680156101415780820380516001836020036101000a031916815260200191505b50838103825284518152845160209182019186019080838360005b8381101561017457818101518382015260200161015c565b50505050905090810190601f1680156101a15780820380516001836020036101000a031916815260200191505b509550505050505060405180910390f35b3480156101be57600080fd5b506101dc600480360360208110156101d557600080fd5b5035610411565b6040805173ffffffffffffffffffffffffffffffffffffffff9092168252519081900360200190f35b34801561021157600080fd5b506101dc6004803603604081101561022857600080fd5b5080359060200135610446565b34801561024157600080fd5b5061009161048a565b34801561025657600080fd5b5061025f610490565b60408051602080825283518183015283519192839290830191858101910280838360005b8381101561029b578181015183820152602001610283565b505050509050019250505060405180910390f35b60005490565b60028054829081106102c357fe5b9060005260206000209060030201600091509050806000015490806001018054600181600116156101000203166002900480601f0160208091040260200160405190810160405280929190818152602001828054600181600116156101000203166002900480156103755780601f1061034a57610100808354040283529160200191610375565b820191906000526020600020905b81548152906001019060200180831161035857829003601f168201915b50505060028085018054604080516020601f60001961010060018716150201909416959095049283018590048502810185019091528181529596959450909250908301828280156104075780601f106103dc57610100808354040283529160200191610407565b820191906000526020600020905b8154815290600101906020018083116103ea57829003601f168201915b5050505050905083565b600080548290811061041f57fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff16905081565b60036020528160005260406000208181548110151561046157fe5b60009182526020909120015473ffffffffffffffffffffffffffffffffffffffff169150829050565b60025490565b606060008054806020026020016040519081016040528092919081815260200182805480156104f557602002820191906000526020600020905b815473ffffffffffffffffffffffffffffffffffffffff1681526001909101906020018083116104ca575b505050505090509056fea165627a7a72305820dc70e917e593466b14e56d8e7d32e61b8f4143c1e2f085270d2f19e922db869f0029",
   "sourceMap": "117:3018:1:-;;;311:1;287:25;;117:3018;8:9:-1;5:2;;;30:1;27;20:12;5:2;117:3018:1;;;;;;;",
-  "deployedSourceMap": "117:3018:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;117:3018:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;364:85:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;319:23:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;319:23:1;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;87:24:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;87:24:4;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;349:52:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;349:52:1;;;;;;;;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;408:91;;;:::i;:::-;;;;;;;;;;;;;;;;;;;454:89:4;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;454:89:4;;;;;;;;;;;;;;;;;364:85;409:4;430:7;:14;;;;423:21;;364:85;:::o;319:23:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;87:24:4:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;349:52:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;408:91::-;455:4;478:7;:14;;;;471:21;;408:91;:::o;454:89:4:-;498:16;531:7;524:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;454:89;:::o",
+  "deployedSourceMap": "117:3018:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;364:85:4;;8:9:-1;5:2;;;30:1;27;20:12;5:2;364:85:4;;;;;;;;;;;;;;;;;;;;319:23:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;319:23:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;319:23:1;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;87:24:4;;8:9:-1;5:2;;;30:1;27;20:12;5:2;87:24:4;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;87:24:4;;;;;;;;;;;;;;;;;;;;;;349:52:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;349:52:1;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;349:52:1;;;;;;;;408:91;;8:9:-1;5:2;;;30:1;27;20:12;5:2;408:91:1;;;;454:89:4;;8:9:-1;5:2;;;30:1;27;20:12;5:2;454:89:4;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;8:100:-1;33:3;30:1;27:10;8:100;;;90:11;;;84:18;71:11;;;64:39;52:2;45:10;8:100;;;12:14;454:89:4;;;;;;;;;;;;;;;;;364:85;409:4;430:14;364:85;:::o;319:23:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;;;319:23:1;;;;;;;;;;;-1:-1:-1;;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;319:23:1;;-1:-1:-1;319:23:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;:::o;87:24:4:-;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;87:24:4;:::o;349:52:1:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;-1:-1:-1;349:52:1;;-1:-1:-1;349:52:1:o;408:91::-;478:7;:14;408:91;:::o;454:89:4:-;498:16;531:7;524:14;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;454:89;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\nimport \"./library/Utils.sol\";\nimport \"./Members.sol\";\nimport \"./AccessToken.sol\";\n\ncontract Anchors is Members {\n\n    struct Anchor {\n        bytes32 nameHash;\n        string name;\n        string url;\n    }\n\n    // each anchor maximum members count\n    uint maxmMembersCount = 2;\n\n    Anchor[] public anchors;\n\n    mapping( bytes32 => address[] ) public anchorMembers;\n\n    function getAnchorsCount() public view returns(uint) {\n        return anchors.length;\n    }\n\n\n    function addAnchor(string memory _name, string memory _url, address[] memory _members) internal {\n        bytes32 nameHash = Utils.strToHash(_name);\n        require(!inAnchors(nameHash),\"dubpicate anchor\");\n        require(_members.length <= maxmMembersCount, \"members are more than valid memebers count\");\n        anchors.push(Anchor(nameHash, _name, _url));\n        for(uint i = 0; i < _members.length; i++){\n          addMemberForAnchor(nameHash, _members[i]);\n        }\n    }\n\n    function deleteAnchor(string memory name) internal {\n        bytes32 nameHash = Utils.strToHash(name);\n        require(anchors.length >= 0, \"anchors is emplty\");\n        address[] memory members = anchorMembers[nameHash];\n        for(uint i = 0; i < members.length; i++){\n          removeAnchorMember(nameHash, members[i]);\n        }\n\n        removeAnchorFromArray(anchors, getIndex(nameHash));\n    }\n\n    function addAnchorMember(bytes32 anchor, address member) internal {\n        getIndex(anchor);\n        require(anchorMembers[anchor].length <= maxmMembersCount, \"the anchor has maximum members\");\n        addMemberForAnchor(anchor, member);\n    }\n\n    function removeAnchorMember(bytes32 anchor, address member) internal {\n        getIndex(anchor);\n        Utils.removeAddressFromArray(anchorMembers[anchor], member);\n        deleteMember(member);\n    }\n\n    function changeAnchorMember(bytes32 anchor, address oldMember, address newMember) internal {\n        removeAnchorMember(anchor, oldMember);\n        addAnchorMember(anchor, newMember);\n    }\n\n    function addMemberForAnchor(bytes32 anchor, address member) private {\n        anchorMembers[anchor].push(member);\n        addMember(member);\n    }\n\n    function inAnchors(bytes32 name) private view returns (bool) {\n        return findAnchor(name) >= 0;\n    }\n\n    function findAnchor(bytes32 nameHash) private view returns (int) {\n        if(nameHash == Utils.strToHash(\"\")){\n            return -1;\n        }\n        for(uint i = 0; i < anchors.length; i++) {\n            if (anchors[i].nameHash == nameHash) {\n               return int(i);\n            }\n        }\n        return -1;\n    }\n\n    function removeAnchorFromArray(Anchor[] storage list, uint index ) private {\n        require(list.length > 0, \"address array is empty\");\n        if(index != list.length - 1){\n            list[index] = list[list.length - 1];\n        }\n        delete list[list.length - 1];\n        list.length--;\n    }\n\n    function getIndex(bytes32 anchor) private view returns(uint) {\n        int test = findAnchor(anchor);\n        require(test >= 0, \"anchor not exist\");\n        return uint(test);\n    }\n\n}",
-  "sourcePath": "C:\\Users\\javad\\projects\\kuknus\\kuknos-dao\\contracts\\Anchors.sol",
+  "sourcePath": "D:\\projects\\blockchain\\kuknos-dao\\contracts\\Anchors.sol",
   "ast": {
-    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Anchors.sol",
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Anchors.sol",
     "exportedSymbols": {
       "Anchors": [
         537
@@ -145,29 +145,29 @@
         "src": "0:32:1"
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/library/Utils.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/library/Utils.sol",
         "file": "./library/Utils.sol",
         "id": 159,
         "nodeType": "ImportDirective",
         "scope": 538,
-        "sourceUnit": 2026,
+        "sourceUnit": 2038,
         "src": "34:29:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Members.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Members.sol",
         "file": "./Members.sol",
         "id": 160,
         "nodeType": "ImportDirective",
         "scope": 538,
-        "sourceUnit": 1281,
+        "sourceUnit": 1285,
         "src": "64:23:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
         "file": "./AccessToken.sol",
         "id": 161,
         "nodeType": "ImportDirective",
@@ -186,10 +186,10 @@
               "id": 162,
               "name": "Members",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1280,
+              "referencedDeclaration": 1284,
               "src": "137:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Members_$1280",
+                "typeIdentifier": "t_contract$_Members_$1284",
                 "typeString": "contract Members"
               }
             },
@@ -199,7 +199,7 @@
           }
         ],
         "contractDependencies": [
-          1280
+          1284
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -207,7 +207,7 @@
         "id": 537,
         "linearizedBaseContracts": [
           537,
-          1280
+          1284
         ],
         "name": "Anchors",
         "nodeType": "ContractDefinition",
@@ -602,10 +602,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "631:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -616,7 +616,7 @@
                       "lValueRequested": false,
                       "memberName": "strToHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1897,
+                      "referencedDeclaration": 1909,
                       "src": "631:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -743,10 +743,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "663:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -870,10 +870,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "721:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1483,10 +1483,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "1071:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -1497,7 +1497,7 @@
                       "lValueRequested": false,
                       "memberName": "strToHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1897,
+                      "referencedDeclaration": 1909,
                       "src": "1071:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -1625,10 +1625,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "1102:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2345,10 +2345,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "1499:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2660,10 +2660,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "1752:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -2674,7 +2674,7 @@
                       "lValueRequested": false,
                       "memberName": "removeAddressFromArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2024,
+                      "referencedDeclaration": 2036,
                       "src": "1752:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$",
@@ -2728,7 +2728,7 @@
                       "name": "deleteMember",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1245,
+                      "referencedDeclaration": 1249,
                       "src": "1821:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -3222,7 +3222,7 @@
                       "name": "addMember",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1232,
+                      "referencedDeclaration": 1236,
                       "src": "2171:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -3575,10 +3575,10 @@
                           "name": "Utils",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2025,
+                          "referencedDeclaration": 2037,
                           "src": "2403:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                            "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                             "typeString": "type(library Utils)"
                           }
                         },
@@ -3589,7 +3589,7 @@
                         "lValueRequested": false,
                         "memberName": "strToHash",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1897,
+                        "referencedDeclaration": 1909,
                         "src": "2403:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -4218,10 +4218,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "2729:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -4945,10 +4945,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "3060:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5119,7 +5119,7 @@
     "src": "0:3135:1"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Anchors.sol",
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Anchors.sol",
     "exportedSymbols": {
       "Anchors": [
         537
@@ -5143,29 +5143,29 @@
         "src": "0:32:1"
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/library/Utils.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/library/Utils.sol",
         "file": "./library/Utils.sol",
         "id": 159,
         "nodeType": "ImportDirective",
         "scope": 538,
-        "sourceUnit": 2026,
+        "sourceUnit": 2038,
         "src": "34:29:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Members.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/Members.sol",
         "file": "./Members.sol",
         "id": 160,
         "nodeType": "ImportDirective",
         "scope": 538,
-        "sourceUnit": 1281,
+        "sourceUnit": 1285,
         "src": "64:23:1",
         "symbolAliases": [],
         "unitAlias": ""
       },
       {
-        "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol",
+        "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
         "file": "./AccessToken.sol",
         "id": 161,
         "nodeType": "ImportDirective",
@@ -5184,10 +5184,10 @@
               "id": 162,
               "name": "Members",
               "nodeType": "UserDefinedTypeName",
-              "referencedDeclaration": 1280,
+              "referencedDeclaration": 1284,
               "src": "137:7:1",
               "typeDescriptions": {
-                "typeIdentifier": "t_contract$_Members_$1280",
+                "typeIdentifier": "t_contract$_Members_$1284",
                 "typeString": "contract Members"
               }
             },
@@ -5197,7 +5197,7 @@
           }
         ],
         "contractDependencies": [
-          1280
+          1284
         ],
         "contractKind": "contract",
         "documentation": null,
@@ -5205,7 +5205,7 @@
         "id": 537,
         "linearizedBaseContracts": [
           537,
-          1280
+          1284
         ],
         "name": "Anchors",
         "nodeType": "ContractDefinition",
@@ -5600,10 +5600,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "631:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -5614,7 +5614,7 @@
                       "lValueRequested": false,
                       "memberName": "strToHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1897,
+                      "referencedDeclaration": 1909,
                       "src": "631:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -5741,10 +5741,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "663:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -5868,10 +5868,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "721:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -6481,10 +6481,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "1071:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -6495,7 +6495,7 @@
                       "lValueRequested": false,
                       "memberName": "strToHash",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1897,
+                      "referencedDeclaration": 1909,
                       "src": "1071:15:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -6623,10 +6623,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "1102:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -7343,10 +7343,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "1499:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -7658,10 +7658,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2025,
+                        "referencedDeclaration": 2037,
                         "src": "1752:5:1",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -7672,7 +7672,7 @@
                       "lValueRequested": false,
                       "memberName": "removeAddressFromArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2024,
+                      "referencedDeclaration": 2036,
                       "src": "1752:28:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$",
@@ -7726,7 +7726,7 @@
                       "name": "deleteMember",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1245,
+                      "referencedDeclaration": 1249,
                       "src": "1821:12:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -8220,7 +8220,7 @@
                       "name": "addMember",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1232,
+                      "referencedDeclaration": 1236,
                       "src": "2171:9:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_address_$returns$__$",
@@ -8573,10 +8573,10 @@
                           "name": "Utils",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2025,
+                          "referencedDeclaration": 2037,
                           "src": "2403:5:1",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Utils_$2025_$",
+                            "typeIdentifier": "t_type$_t_contract$_Utils_$2037_$",
                             "typeString": "type(library Utils)"
                           }
                         },
@@ -8587,7 +8587,7 @@
                         "lValueRequested": false,
                         "memberName": "strToHash",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1897,
+                        "referencedDeclaration": 1909,
                         "src": "2403:15:1",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_string_memory_ptr_$returns$_t_bytes32_$",
@@ -9216,10 +9216,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "2729:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -9943,10 +9943,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "3060:7:1",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -10118,11 +10118,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2019-06-20T11:39:24.781Z",
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2019-06-22T09:22:18.340Z",
   "devdoc": {
     "methods": {}
   },

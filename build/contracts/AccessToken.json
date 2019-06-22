@@ -60,15 +60,15 @@
       "type": "constructor"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"accessTokensCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTokenIssueDate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_accessTokensCount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol\":\"AccessToken\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0xb25f19038123b1e757af2cde9ae92eee7bd23be2bce1e4f8ebdaa598e883ee6d\",\"urls\":[\"bzzr://1cb2ceba27ed2fae4c38838f049a82e18d324e6059074b0d1ccd3c0bb863e8ed\"]}},\"version\":1}",
-  "bytecode": "0x6080604052603260015534801561001557600080fd5b5060405160208061017b8339810180604052602081101561003557600080fd5b8101908080519060200190929190505050806001819055505061011e8061005d6000396000f3fe6080604052348015600f57600080fd5b5060043610603c5760003560e01c806355de8c7e14604157806370a0823114605d578063cededb301460b2575b600080fd5b604760ce565b6040518082815260200191505060405180910390f35b609c60048036036020811015607157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060d4565b6040518082815260200191505060405180910390f35b60b860ec565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a7230582065e020f1bb858571e2df3569a9e217b6ed6286eb42b340e896de789bcd9b74020029",
-  "deployedBytecode": "0x6080604052348015600f57600080fd5b5060043610603c5760003560e01c806355de8c7e14604157806370a0823114605d578063cededb301460b2575b600080fd5b604760ce565b6040518082815260200191505060405180910390f35b609c60048036036020811015607157600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505060d4565b6040518082815260200191505060405180910390f35b60b860ec565b6040518082815260200191505060405180910390f35b60015481565b60026020528060005260406000206000915090505481565b6000548156fea165627a7a7230582065e020f1bb858571e2df3569a9e217b6ed6286eb42b340e896de789bcd9b74020029",
-  "sourceMap": "34:1283:0:-;;;179:2;147:34;;232:92;8:9:-1;5:2;;;30:1;27;20:12;5:2;232:92:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;232:92:0;;;;;;;;;;;;;;;;301:18;281:17;:38;;;;232:92;34:1283;;;;;;",
-  "deployedSourceMap": "34:1283:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:1283:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;147:34;;;:::i;:::-;;;;;;;;;;;;;;;;;;;186:41;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;186:41:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;112:30;;;:::i;:::-;;;;;;;;;;;;;;;;;;;147:34;;;;:::o;186:41::-;;;;;;;;;;;;;;;;;:::o;112:30::-;;;;:::o",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.0+commit.1d4f565a\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"accessTokensCount\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"name\":\"\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"lastTokenIssueDate\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"name\":\"_accessTokensCount\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":\"AccessToken\"},\"evmVersion\":\"byzantium\",\"libraries\":{},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[]},\"sources\":{\"/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol\":{\"keccak256\":\"0xb25f19038123b1e757af2cde9ae92eee7bd23be2bce1e4f8ebdaa598e883ee6d\",\"urls\":[\"bzzr://1cb2ceba27ed2fae4c38838f049a82e18d324e6059074b0d1ccd3c0bb863e8ed\"]}},\"version\":1}",
+  "bytecode": "0x6080604052603260015534801561001557600080fd5b5060405160208061015c8339810180604052602081101561003557600080fd5b5051600155610113806100496000396000f3fe60806040526004361060525763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166355de8c7e8114605757806370a0823114607b578063cededb301460b7575b600080fd5b348015606257600080fd5b50606960c9565b60408051918252519081900360200190f35b348015608657600080fd5b50606960048036036020811015609b57600080fd5b503573ffffffffffffffffffffffffffffffffffffffff1660cf565b34801560c257600080fd5b50606960e1565b60015481565b60026020526000908152604090205481565b6000548156fea165627a7a723058203e0200953f6b3756032894b491ff6ce2b8baee6dd201a13cf8b26281f263a2c60029",
+  "deployedBytecode": "0x60806040526004361060525763ffffffff7c010000000000000000000000000000000000000000000000000000000060003504166355de8c7e8114605757806370a0823114607b578063cededb301460b7575b600080fd5b348015606257600080fd5b50606960c9565b60408051918252519081900360200190f35b348015608657600080fd5b50606960048036036020811015609b57600080fd5b503573ffffffffffffffffffffffffffffffffffffffff1660cf565b34801560c257600080fd5b50606960e1565b60015481565b60026020526000908152604090205481565b6000548156fea165627a7a723058203e0200953f6b3756032894b491ff6ce2b8baee6dd201a13cf8b26281f263a2c60029",
+  "sourceMap": "34:1283:0:-;;;179:2;147:34;;232:92;8:9:-1;5:2;;;30:1;27;20:12;5:2;232:92:0;;;;;;;;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;232:92:0;281:17;:38;34:1283;;;;;;",
+  "deployedSourceMap": "34:1283:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;147:34;;8:9:-1;5:2;;;30:1;27;20:12;5:2;147:34:0;;;;;;;;;;;;;;;;;;;;186:41;;8:9:-1;5:2;;;30:1;27;20:12;5:2;186:41:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;-1:-1;186:41:0;;;;;112:30;;8:9:-1;5:2;;;30:1;27;20:12;5:2;112:30:0;;;;147:34;;;;:::o;186:41::-;;;;;;;;;;;;;:::o;112:30::-;;;;:::o",
   "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract AccessToken {\n\n  uint constant YEAR_SECONDS = 365 * 24 * 60 * 60;\n\n  uint public lastTokenIssueDate;\n\n  uint public accessTokensCount = 50;\n\n  mapping(address => uint) public balanceOf;\n\n  constructor(uint _accessTokensCount) public{\n    accessTokensCount = _accessTokensCount;\n  }\n\n  modifier useToken(uint count) {\n      require(balanceOf[msg.sender] >= count, \"you have not enough token\");\n      _;\n      balanceOf[msg.sender] -= count;\n  }\n\n  function renewToken(address[] memory voters, bool force) internal {\n      if(lastTokenIssueDate > 0 && !force) {\n          uint endDate = lastTokenIssueDate + YEAR_SECONDS;\n          require(endDate < getTime(), \"you must renew tokens after one year\");\n      }\n      issueAccessToken(voters, accessTokensCount);\n      lastTokenIssueDate = getTime();\n  }\n\n  function issueAccessToken(address[] memory _members, uint count) internal {\n      for(uint i = 0; i < _members.length; i++) {\n         setAccessToken(_members[i], count);\n      }\n  }\n\n  function setAccessToken(address _member, uint count) internal {\n      balanceOf[_member] = count;\n  }\n\n  function setAccessTokensCount(uint count) internal {\n    accessTokensCount = count;\n  }\n\n  function getTime() internal view returns (uint) {\n        return block.timestamp;\n  }\n\n}",
-  "sourcePath": "C:\\Users\\javad\\projects\\kuknus\\kuknos-dao\\contracts\\AccessToken.sol",
+  "sourcePath": "D:\\projects\\blockchain\\kuknos-dao\\contracts\\AccessToken.sol",
   "ast": {
-    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol",
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
     "exportedSymbols": {
       "AccessToken": [
         156
@@ -523,7 +523,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2040,
+                              "referencedDeclaration": 2052,
                               "src": "384:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -610,10 +610,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "366:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -675,7 +675,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2040,
+                          "referencedDeclaration": 2052,
                           "src": "461:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -1069,10 +1069,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              2043,
-                              2044
+                              2055,
+                              2056
                             ],
-                            "referencedDeclaration": 2044,
+                            "referencedDeclaration": 2056,
                             "src": "673:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1962,7 +1962,7 @@
                       "name": "block",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2030,
+                      "referencedDeclaration": 2042,
                       "src": "1294:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
@@ -2050,7 +2050,7 @@
     "src": "0:1317:0"
   },
   "legacyAST": {
-    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/AccessToken.sol",
+    "absolutePath": "/D/projects/blockchain/kuknos-dao/contracts/AccessToken.sol",
     "exportedSymbols": {
       "AccessToken": [
         156
@@ -2505,7 +2505,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 2040,
+                              "referencedDeclaration": 2052,
                               "src": "384:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -2592,10 +2592,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2043,
-                        2044
+                        2055,
+                        2056
                       ],
-                      "referencedDeclaration": 2044,
+                      "referencedDeclaration": 2056,
                       "src": "366:7:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -2657,7 +2657,7 @@
                           "name": "msg",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2040,
+                          "referencedDeclaration": 2052,
                           "src": "461:3:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_magic_message",
@@ -3051,10 +3051,10 @@
                             "name": "require",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [
-                              2043,
-                              2044
+                              2055,
+                              2056
                             ],
-                            "referencedDeclaration": 2044,
+                            "referencedDeclaration": 2056,
                             "src": "673:7:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -3944,7 +3944,7 @@
                       "name": "block",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 2030,
+                      "referencedDeclaration": 2042,
                       "src": "1294:5:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_magic_block",
@@ -4033,11 +4033,11 @@
   },
   "compiler": {
     "name": "solc",
-    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+    "version": "0.5.0+commit.1d4f565a.Emscripten.clang"
   },
   "networks": {},
-  "schemaVersion": "3.0.11",
-  "updatedAt": "2019-06-20T11:39:24.776Z",
+  "schemaVersion": "3.0.9",
+  "updatedAt": "2019-06-22T09:22:18.338Z",
   "devdoc": {
     "methods": {}
   },
