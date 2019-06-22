@@ -59,7 +59,7 @@ contract KuknosDAO is Voting, Config {
 
 
     function checkProposalResult(uint _id, ProposalTypes pType) internal view returns(bool) {
-        (,,uint proposalType, address contractAddress,, bool isFinished, bool successFull) = getProposalStatus(_id);
+        (,,uint proposalType, address contractAddress,, bool isFinished,,,bool successFull) = getProposalStatus(_id);
         require(proposalType == uint(pType), "type mismatch");
         require(contractAddress == address(this), "the propsal is not an internal proposal");
         require(isFinished,"the propsal is not finished");

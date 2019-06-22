@@ -19,6 +19,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint16 down;
     address contractAddress;
     uint8 threshold;
+    uint id;
   }
 
   Proposal[] public proposals;
@@ -53,11 +54,41 @@ contract Voting is Ownable, AccessToken, Anchors {
       proposals[_proposalIndex].down += 1;
     }
   }
+
+  function getProposal(uint index) public view returns ( 
+    string memory,
+    uint32,
+    uint32,
+    uint32,
+    address,
+    string memory,
+    string memory,
+    uint32,
+    address,
+    uint8,
+    uint
+    ) {
+    Proposal memory proposal = proposals[index];
+    return (
+      proposal.title,
+      proposal.proposalType,
+      proposal.startDate,
+      proposal.endDate,
+      proposal.author,
+      proposal.url,
+      proposal.hashCode,
+      proposal.registerDate,
+      proposal.contractAddress,
+      proposal.threshold,
+      proposal.id
+    );
+  }
+
   function getProposalsCount() public view returns (uint) {
     return proposals.length;
   }
 
-  function getProposalStatus(uint index) public view returns ( uint, uint, uint, address, bool, bool, bool ) {
+  function getProposalStatus(uint index) public view returns ( uint, uint, uint, address, bool, bool,uint,uint, bool ) {
     Proposal memory proposal = proposals[index];
     uint total = proposal.up + proposal.down;
     return (
@@ -67,7 +98,9 @@ contract Voting is Ownable, AccessToken, Anchors {
       proposal.contractAddress,
       getTime() < proposal.startDate, // isNotStarted
       getTime() >= proposal.endDate, // isExpired
-      (proposal.up * 100 / total) >= proposals[index].threshold
+      proposal.up * 100 / total,
+      proposal.up * 100 / total,
+      (proposal.up * 100 / total) >= proposal.threshold
     );
   }
 
@@ -83,7 +116,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     ) public onlyMembers useToken(1) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
         proposals.push(
-          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
+          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold,0)
         );
   }
 
@@ -97,7 +130,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint8 threshold
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(
-          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold)
+          Proposal(title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold,0)
         );
   }
 }

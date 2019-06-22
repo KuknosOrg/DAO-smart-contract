@@ -1,0 +1,2067 @@
+{
+  "contractName": "Config",
+  "abi": [
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "changeConfigThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "removeAnchorThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "changeAnchorMemberThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "renewAccessTokenThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "addAnchorThreshold",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint8"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"changeConfigThreshold\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"removeAnchorThreshold\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"changeAnchorMemberThreshold\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"renewAccessTokenThreshold\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"addAnchorThreshold\",\"outputs\":[{\"name\":\"\",\"type\":\"uint8\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Config.sol\":\"Config\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Config.sol\":{\"keccak256\":\"0x9603d60d31d84ddbcb2b5bbaedb343e8b9302a0d6c48e8329782664211a4b61d\",\"urls\":[\"bzzr://c89ecc41f968d046a47b0e982d80598f84e0b8beae1e309192fd7b9c67ca0a7c\"]}},\"version\":1}",
+  "bytecode": "0x608060405260336000806101000a81548160ff021916908360ff1602179055506050600060016101000a81548160ff021916908360ff1602179055506033600060026101000a81548160ff021916908360ff1602179055506033600060036101000a81548160ff021916908360ff1602179055506050600060046101000a81548160ff021916908360ff16021790555034801561009b57600080fd5b5061019a806100ab6000396000f3fe608060405234801561001057600080fd5b50600436106100575760003560e01c80636ee2e2251461005c578063bb60512f14610080578063d4e18e68146100a4578063fa019249146100c8578063fc37a9e8146100ec575b600080fd5b610064610110565b604051808260ff1660ff16815260200191505060405180910390f35b610088610123565b604051808260ff1660ff16815260200191505060405180910390f35b6100ac610136565b604051808260ff1660ff16815260200191505060405180910390f35b6100d0610149565b604051808260ff1660ff16815260200191505060405180910390f35b6100f461015c565b604051808260ff1660ff16815260200191505060405180910390f35b600060049054906101000a900460ff1681565b600060019054906101000a900460ff1681565b600060039054906101000a900460ff1681565b600060029054906101000a900460ff1681565b6000809054906101000a900460ff168156fea165627a7a72305820404c049e394aa3f368385fd311852308d160bc2376ea84b87337b168971209880029",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100575760003560e01c80636ee2e2251461005c578063bb60512f14610080578063d4e18e68146100a4578063fa019249146100c8578063fc37a9e8146100ec575b600080fd5b610064610110565b604051808260ff1660ff16815260200191505060405180910390f35b610088610123565b604051808260ff1660ff16815260200191505060405180910390f35b6100ac610136565b604051808260ff1660ff16815260200191505060405180910390f35b6100d0610149565b604051808260ff1660ff16815260200191505060405180910390f35b6100f461015c565b604051808260ff1660ff16815260200191505060405180910390f35b600060049054906101000a900460ff1681565b600060019054906101000a900460ff1681565b600060039054906101000a900460ff1681565b600060029054906101000a900460ff1681565b6000809054906101000a900460ff168156fea165627a7a72305820404c049e394aa3f368385fd311852308d160bc2376ea84b87337b168971209880029",
+  "sourceMap": "34:1157:2:-;;;287:2;253:36;;;;;;;;;;;;;;;;;;;;333:2;296:39;;;;;;;;;;;;;;;;;;;;383:2;342:43;;;;;;;;;;;;;;;;;;;;435:2;392:45;;;;;;;;;;;;;;;;;;;;481:2;444:39;;;;;;;;;;;;;;;;;;;;34:1157;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:1157:2;;;;;;;",
+  "deployedSourceMap": "34:1157:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;34:1157:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;444:39;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;296;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;392:45;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;342:43;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;253:36;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;444:39;;;;;;;;;;;;;:::o;296:::-;;;;;;;;;;;;;:::o;392:45::-;;;;;;;;;;;;;:::o;342:43::-;;;;;;;;;;;;;:::o;253:36::-;;;;;;;;;;;;;:::o",
+  "source": "pragma solidity >=0.4.21 <0.6.0;\n\ncontract Config {\n\n    enum ChangeConfigType {\n        AddAnchorThreshold,\n        RemoveAnchorThreshold,\n        RenewAccessTokenThreshold,\n        ChangeAnchorMemberThreshold,\n        ChangeConfigThreshold\n    }\n\n    uint8 public addAnchorThreshold = 51;\n\n    uint8 public removeAnchorThreshold = 80;\n\n    uint8 public renewAccessTokenThreshold = 51;\n\n    uint8 public changeAnchorMemberThreshold = 51;\n\n    uint8 public changeConfigThreshold = 80;\n\n    function setConfig(ChangeConfigType configType, uint8 value) internal {\n\n        if(configType == ChangeConfigType.AddAnchorThreshold) {\n             addAnchorThreshold = value;\n        }\n\n        if(configType == ChangeConfigType.RemoveAnchorThreshold) {\n            removeAnchorThreshold = value;\n        }\n\n        if(configType == ChangeConfigType.RenewAccessTokenThreshold) {\n             renewAccessTokenThreshold = value;\n        }\n\n        if(configType == ChangeConfigType.ChangeAnchorMemberThreshold) {\n            changeAnchorMemberThreshold = value;\n        }\n\n        if(configType == ChangeConfigType.ChangeConfigThreshold) {\n            changeConfigThreshold = value;\n        }\n    }\n\n}",
+  "sourcePath": "C:\\Users\\javad\\projects\\kuknus\\kuknos-dao\\contracts\\Config.sol",
+  "ast": {
+    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Config.sol",
+    "exportedSymbols": {
+      "Config": [
+        619
+      ]
+    },
+    "id": 620,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 539,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 619,
+        "linearizedBaseContracts": [
+          619
+        ],
+        "name": "Config",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Config.ChangeConfigType",
+            "id": 545,
+            "members": [
+              {
+                "id": 540,
+                "name": "AddAnchorThreshold",
+                "nodeType": "EnumValue",
+                "src": "89:18:2"
+              },
+              {
+                "id": 541,
+                "name": "RemoveAnchorThreshold",
+                "nodeType": "EnumValue",
+                "src": "117:21:2"
+              },
+              {
+                "id": 542,
+                "name": "RenewAccessTokenThreshold",
+                "nodeType": "EnumValue",
+                "src": "148:25:2"
+              },
+              {
+                "id": 543,
+                "name": "ChangeAnchorMemberThreshold",
+                "nodeType": "EnumValue",
+                "src": "183:27:2"
+              },
+              {
+                "id": 544,
+                "name": "ChangeConfigThreshold",
+                "nodeType": "EnumValue",
+                "src": "220:21:2"
+              }
+            ],
+            "name": "ChangeConfigType",
+            "nodeType": "EnumDefinition",
+            "src": "57:190:2"
+          },
+          {
+            "constant": false,
+            "id": 548,
+            "name": "addAnchorThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "253:36:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 546,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "253:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 547,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "287:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 551,
+            "name": "removeAnchorThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "296:39:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 549,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "296:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3830",
+              "id": 550,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "333:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_80_by_1",
+                "typeString": "int_const 80"
+              },
+              "value": "80"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 554,
+            "name": "renewAccessTokenThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "342:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 552,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "342:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 553,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "383:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 557,
+            "name": "changeAnchorMemberThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "392:45:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 555,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "392:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 556,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "435:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 560,
+            "name": "changeConfigThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "444:39:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 558,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "444:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3830",
+              "id": 559,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "481:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_80_by_1",
+                "typeString": "int_const 80"
+              },
+              "value": "80"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 617,
+              "nodeType": "Block",
+              "src": "560:628:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 570,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 567,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "574:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 568,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "588:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 569,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "AddAnchorThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "588:35:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "574:49:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 576,
+                  "nodeType": "IfStatement",
+                  "src": "571:106:2",
+                  "trueBody": {
+                    "id": 575,
+                    "nodeType": "Block",
+                    "src": "625:52:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 573,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 571,
+                            "name": "addAnchorThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 548,
+                            "src": "640:18:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 572,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "661:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "640:26:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 574,
+                        "nodeType": "ExpressionStatement",
+                        "src": "640:26:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 577,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "690:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 578,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "704:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 579,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "RemoveAnchorThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "704:38:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "690:52:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 586,
+                  "nodeType": "IfStatement",
+                  "src": "687:111:2",
+                  "trueBody": {
+                    "id": 585,
+                    "nodeType": "Block",
+                    "src": "744:54:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 583,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 581,
+                            "name": "removeAnchorThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 551,
+                            "src": "758:21:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 582,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "782:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "758:29:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 584,
+                        "nodeType": "ExpressionStatement",
+                        "src": "758:29:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 590,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 587,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "811:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 588,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "825:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 589,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "RenewAccessTokenThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "825:42:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "811:56:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 596,
+                  "nodeType": "IfStatement",
+                  "src": "808:120:2",
+                  "trueBody": {
+                    "id": 595,
+                    "nodeType": "Block",
+                    "src": "869:59:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 593,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 591,
+                            "name": "renewAccessTokenThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 554,
+                            "src": "884:25:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 592,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "912:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "884:33:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 594,
+                        "nodeType": "ExpressionStatement",
+                        "src": "884:33:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 600,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 597,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "941:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 598,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "955:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 599,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ChangeAnchorMemberThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "955:44:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "941:58:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 606,
+                  "nodeType": "IfStatement",
+                  "src": "938:123:2",
+                  "trueBody": {
+                    "id": 605,
+                    "nodeType": "Block",
+                    "src": "1001:60:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 603,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 601,
+                            "name": "changeAnchorMemberThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 557,
+                            "src": "1015:27:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 602,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "1045:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "1015:35:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 604,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1015:35:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 610,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 607,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "1074:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 608,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "1088:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 609,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ChangeConfigThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1088:38:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "1074:52:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 616,
+                  "nodeType": "IfStatement",
+                  "src": "1071:111:2",
+                  "trueBody": {
+                    "id": 615,
+                    "nodeType": "Block",
+                    "src": "1128:54:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 613,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 611,
+                            "name": "changeConfigThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 560,
+                            "src": "1142:21:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 612,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "1166:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "1142:29:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 614,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1142:29:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 618,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConfig",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 565,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 562,
+                  "name": "configType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "509:27:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                    "typeString": "enum Config.ChangeConfigType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 561,
+                    "name": "ChangeConfigType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 545,
+                    "src": "509:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 564,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "538:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 563,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "538:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "508:42:2"
+            },
+            "returnParameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "560:0:2"
+            },
+            "scope": 619,
+            "src": "490:698:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 620,
+        "src": "34:1157:2"
+      }
+    ],
+    "src": "0:1191:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/javad/projects/kuknus/kuknos-dao/contracts/Config.sol",
+    "exportedSymbols": {
+      "Config": [
+        619
+      ]
+    },
+    "id": 620,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 539,
+        "literals": [
+          "solidity",
+          ">=",
+          "0.4",
+          ".21",
+          "<",
+          "0.6",
+          ".0"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:32:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 619,
+        "linearizedBaseContracts": [
+          619
+        ],
+        "name": "Config",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Config.ChangeConfigType",
+            "id": 545,
+            "members": [
+              {
+                "id": 540,
+                "name": "AddAnchorThreshold",
+                "nodeType": "EnumValue",
+                "src": "89:18:2"
+              },
+              {
+                "id": 541,
+                "name": "RemoveAnchorThreshold",
+                "nodeType": "EnumValue",
+                "src": "117:21:2"
+              },
+              {
+                "id": 542,
+                "name": "RenewAccessTokenThreshold",
+                "nodeType": "EnumValue",
+                "src": "148:25:2"
+              },
+              {
+                "id": 543,
+                "name": "ChangeAnchorMemberThreshold",
+                "nodeType": "EnumValue",
+                "src": "183:27:2"
+              },
+              {
+                "id": 544,
+                "name": "ChangeConfigThreshold",
+                "nodeType": "EnumValue",
+                "src": "220:21:2"
+              }
+            ],
+            "name": "ChangeConfigType",
+            "nodeType": "EnumDefinition",
+            "src": "57:190:2"
+          },
+          {
+            "constant": false,
+            "id": 548,
+            "name": "addAnchorThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "253:36:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 546,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "253:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 547,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "287:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 551,
+            "name": "removeAnchorThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "296:39:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 549,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "296:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3830",
+              "id": 550,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "333:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_80_by_1",
+                "typeString": "int_const 80"
+              },
+              "value": "80"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 554,
+            "name": "renewAccessTokenThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "342:43:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 552,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "342:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 553,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "383:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 557,
+            "name": "changeAnchorMemberThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "392:45:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 555,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "392:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3531",
+              "id": 556,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "435:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_51_by_1",
+                "typeString": "int_const 51"
+              },
+              "value": "51"
+            },
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 560,
+            "name": "changeConfigThreshold",
+            "nodeType": "VariableDeclaration",
+            "scope": 619,
+            "src": "444:39:2",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_uint8",
+              "typeString": "uint8"
+            },
+            "typeName": {
+              "id": 558,
+              "name": "uint8",
+              "nodeType": "ElementaryTypeName",
+              "src": "444:5:2",
+              "typeDescriptions": {
+                "typeIdentifier": "t_uint8",
+                "typeString": "uint8"
+              }
+            },
+            "value": {
+              "argumentTypes": null,
+              "hexValue": "3830",
+              "id": 559,
+              "isConstant": false,
+              "isLValue": false,
+              "isPure": true,
+              "kind": "number",
+              "lValueRequested": false,
+              "nodeType": "Literal",
+              "src": "481:2:2",
+              "subdenomination": null,
+              "typeDescriptions": {
+                "typeIdentifier": "t_rational_80_by_1",
+                "typeString": "int_const 80"
+              },
+              "value": "80"
+            },
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 617,
+              "nodeType": "Block",
+              "src": "560:628:2",
+              "statements": [
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 570,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 567,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "574:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 568,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "588:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 569,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "AddAnchorThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "588:35:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "574:49:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 576,
+                  "nodeType": "IfStatement",
+                  "src": "571:106:2",
+                  "trueBody": {
+                    "id": 575,
+                    "nodeType": "Block",
+                    "src": "625:52:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 573,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 571,
+                            "name": "addAnchorThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 548,
+                            "src": "640:18:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 572,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "661:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "640:26:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 574,
+                        "nodeType": "ExpressionStatement",
+                        "src": "640:26:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 580,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 577,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "690:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 578,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "704:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 579,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "RemoveAnchorThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "704:38:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "690:52:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 586,
+                  "nodeType": "IfStatement",
+                  "src": "687:111:2",
+                  "trueBody": {
+                    "id": 585,
+                    "nodeType": "Block",
+                    "src": "744:54:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 583,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 581,
+                            "name": "removeAnchorThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 551,
+                            "src": "758:21:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 582,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "782:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "758:29:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 584,
+                        "nodeType": "ExpressionStatement",
+                        "src": "758:29:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 590,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 587,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "811:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 588,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "825:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 589,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "RenewAccessTokenThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "825:42:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "811:56:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 596,
+                  "nodeType": "IfStatement",
+                  "src": "808:120:2",
+                  "trueBody": {
+                    "id": 595,
+                    "nodeType": "Block",
+                    "src": "869:59:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 593,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 591,
+                            "name": "renewAccessTokenThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 554,
+                            "src": "884:25:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 592,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "912:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "884:33:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 594,
+                        "nodeType": "ExpressionStatement",
+                        "src": "884:33:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 600,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 597,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "941:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 598,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "955:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 599,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ChangeAnchorMemberThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "955:44:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "941:58:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 606,
+                  "nodeType": "IfStatement",
+                  "src": "938:123:2",
+                  "trueBody": {
+                    "id": 605,
+                    "nodeType": "Block",
+                    "src": "1001:60:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 603,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 601,
+                            "name": "changeAnchorMemberThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 557,
+                            "src": "1015:27:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 602,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "1045:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "1015:35:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 604,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1015:35:2"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "condition": {
+                    "argumentTypes": null,
+                    "commonType": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    },
+                    "id": 610,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "leftExpression": {
+                      "argumentTypes": null,
+                      "id": 607,
+                      "name": "configType",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 562,
+                      "src": "1074:10:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "nodeType": "BinaryOperation",
+                    "operator": "==",
+                    "rightExpression": {
+                      "argumentTypes": null,
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 608,
+                        "name": "ChangeConfigType",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 545,
+                        "src": "1088:16:2",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_type$_t_enum$_ChangeConfigType_$545_$",
+                          "typeString": "type(enum Config.ChangeConfigType)"
+                        }
+                      },
+                      "id": 609,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": true,
+                      "lValueRequested": false,
+                      "memberName": "ChangeConfigThreshold",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "1088:38:2",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                        "typeString": "enum Config.ChangeConfigType"
+                      }
+                    },
+                    "src": "1074:52:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_bool",
+                      "typeString": "bool"
+                    }
+                  },
+                  "falseBody": null,
+                  "id": 616,
+                  "nodeType": "IfStatement",
+                  "src": "1071:111:2",
+                  "trueBody": {
+                    "id": 615,
+                    "nodeType": "Block",
+                    "src": "1128:54:2",
+                    "statements": [
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 613,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "id": 611,
+                            "name": "changeConfigThreshold",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 560,
+                            "src": "1142:21:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "=",
+                          "rightHandSide": {
+                            "argumentTypes": null,
+                            "id": 612,
+                            "name": "value",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 564,
+                            "src": "1166:5:2",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint8",
+                              "typeString": "uint8"
+                            }
+                          },
+                          "src": "1142:29:2",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint8",
+                            "typeString": "uint8"
+                          }
+                        },
+                        "id": 614,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1142:29:2"
+                      }
+                    ]
+                  }
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 618,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "setConfig",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 565,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 562,
+                  "name": "configType",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "509:27:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                    "typeString": "enum Config.ChangeConfigType"
+                  },
+                  "typeName": {
+                    "contractScope": null,
+                    "id": 561,
+                    "name": "ChangeConfigType",
+                    "nodeType": "UserDefinedTypeName",
+                    "referencedDeclaration": 545,
+                    "src": "509:16:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_enum$_ChangeConfigType_$545",
+                      "typeString": "enum Config.ChangeConfigType"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 564,
+                  "name": "value",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 618,
+                  "src": "538:11:2",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint8",
+                    "typeString": "uint8"
+                  },
+                  "typeName": {
+                    "id": 563,
+                    "name": "uint8",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "538:5:2",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint8",
+                      "typeString": "uint8"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "508:42:2"
+            },
+            "returnParameters": {
+              "id": 566,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "560:0:2"
+            },
+            "scope": 619,
+            "src": "490:698:2",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 620,
+        "src": "34:1157:2"
+      }
+    ],
+    "src": "0:1191:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.8+commit.23d335f2.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.11",
+  "updatedAt": "2019-06-20T11:39:24.785Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}
