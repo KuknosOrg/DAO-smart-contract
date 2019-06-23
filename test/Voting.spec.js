@@ -1,51 +1,30 @@
-const Voting = artifacts.require("./Voting.sol")
-
-const inspect = (arg) => {
-    console.log(arg);
-    return arg;
-}
-
-const now = () => Math.floor(Date.now() / 1000);
-
-const daySeconds = () => (24 * 60 * 60);
-
-const addDay = (days) => (time) => time + (days * daySeconds());
-
+const DAO = artifacts.require("./KuknosDAO.sol")
+const { addDay, now, zeroAddress } = require("./config/utils");
+const { getContract } = require("./config/configContract");
 
 contract("Voting", (accounts) => {
     var ct;
-    beforeEach(() => {
-        return Voting.deployed().then(instance => ct = instance)
-    })
-    it("voters count", () =>
-        ct.votersCount()
-            .then(count => assert.equal(count, 9))
-    )
-
-    it("voters list", () =>
-        ct.votersList()
-            .then(list => assert.equal(list.length, 9))
-    )
+    beforeEach(() => ct || getContract(DAO, accounts).then(instance => ct = instance))
 
     it("registerProposal", () =>
-        ct.balanceOf(accounts[0])
+        ct.balanceOf(accounts[1])
             .then(balance => assert.equal(balance, 50))
-            .then(() => ct.registerProposal("test", 1, addDay(-1)(now()), addDay(8)(now()), "http://test.com", "123456", {
-                from: accounts[0]
+            .then(() => ct.registerProposal(1, "test", 1, addDay(-1)(now()), addDay(8)(now()), "http://test.com", "951", zeroAddress(),51, {
+                from: accounts[1]
             }))
             .then(() => ct.getProposal(0))
-            .then((proposal) => assert.equal(proposal[0], "test"))
-            .then(()=> ct.balanceOf(accounts[0]))
+            .then((proposal) => assert.equal(proposal.title, "test"))
+            .then(() => ct.balanceOf(accounts[1]))
             .then(balance => assert.equal(balance, 49))
     )
 
     it("voteForProposal", () =>
-        ct.voteForProposal(0, 1, { from: accounts[0] })
-            .then(() => ct.voteForProposal(0, -1, { from: accounts[1] }))
-            .then(() => ct.getProposal(0))
+        ct.voteForProposal(0, 1, { from: accounts[2] })
+            .then(() => ct.voteForProposal(0, -1, { from: accounts[3] }))
+            .then(() => ct.getProposalStatus(0))
             .then((proposal) => {
-                assert.equal(proposal[8], 1);
-                assert.equal(proposal[9], 1);
+                assert.equal(proposal.up, 1);
+                assert.equal(proposal.down, 1);
             })
     )
 

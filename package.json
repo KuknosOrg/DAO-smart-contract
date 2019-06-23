@@ -1,7 +1,6 @@
 {
   "name": "kuknos-dao",
   "version": "1.0.0",
-  "description": "",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -9,10 +8,18 @@
   "scripts": {
     "test": "truffle test",
     "compile": "truffle compile",
-    "migrate": "truffle migrate --network development",
-    "console": "truffle console --network development",
-    "reset": "truffle migrate --reset"
+    "migrate": "truffle migrate --network ropsten",
+    "console": "truffle console --network ropsten",
+    "reset": "truffle migrate --reset --network ropsten"
   },
   "author": "Javad Khalilian <khalilian.javad@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://git.kuknos.org/technical-committee/kuknos-dao.git"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+  }
 }
