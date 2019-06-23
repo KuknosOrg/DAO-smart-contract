@@ -7,7 +7,7 @@ contract Members {
   address[] public members;
 
   function addMember(address member) internal {
-      require(!inMembers(msg.sender),"dubpicate member");
+      require(!inMembers(member),"dubpicate member");
       members.push(member);
   }
 
