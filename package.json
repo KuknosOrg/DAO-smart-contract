@@ -1,7 +1,6 @@
 {
   "name": "kuknos-dao",
   "version": "1.0.0",
-  "description": "",
   "main": "truffle-config.js",
   "directories": {
     "test": "test"
@@ -14,5 +13,11 @@
     "reset": "truffle migrate --reset"
   },
   "author": "Javad Khalilian <khalilian.javad@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://git.kuknos.org/technical-committee/kuknos-dao.git"
+  },
+  "keywords": [],
+  "description": ""
 }
