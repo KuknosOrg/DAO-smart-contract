@@ -11,6 +11,7 @@ contract AccessToken {
   mapping(address => uint) public balanceOf;
 
   constructor(uint _accessTokensCount) public{
+    lastTokenIssueDate = getTime();
     accessTokensCount = _accessTokensCount;
   }
 
