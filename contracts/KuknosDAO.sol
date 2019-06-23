@@ -88,7 +88,7 @@ contract KuknosDAO is Voting, Config {
           internalProposalsCount++;
           uint id = registerInternalProposal(
               internalProposalsCount,
-              "add anchor",
+              _type == ProposalTypes.AddAnchor ? "add anchor" : "update anchor",
               uint32(_type),
               _startDate,
               _endDate,
