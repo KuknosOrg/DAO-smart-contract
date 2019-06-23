@@ -112,9 +112,9 @@ contract Voting is Ownable, AccessToken, Anchors {
       proposal.contractAddress,
       getTime() < proposal.startDate, // isNotStarted
       getTime() >= proposal.endDate, // isExpired
-      uint16(proposal.up * 100 / total),
-      uint16(proposal.down * 100 / total),
-      (proposal.up * 100 / total) >= proposal.threshold
+      total == 0 ? 0 : uint16(proposal.up * 100 / total),
+      total == 0 ? 0 : uint16(proposal.down * 100 / total),
+      total == 0 ? false :(proposal.up * 100 / total) >= proposal.threshold
     );
   }
 

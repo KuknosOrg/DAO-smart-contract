@@ -5,7 +5,7 @@ import "./Config.sol";
 
 contract KuknosDAO is Voting, Config {
 
-    enum ProposalTypes { AddAnchor, RemoveAnchor, ChangeAnchorMember, RenewAccessToken, ChangeConfig }
+    enum ProposalTypes { AddAnchor, UpdateAnchor, RemoveAnchor, ChangeAnchorMember, RenewAccessToken, ChangeConfig }
 
     struct AddAnchorProposal {
         string name;
@@ -31,7 +31,7 @@ contract KuknosDAO is Voting, Config {
         uint executionTime;
     }
 
-    mapping ( uint => AddAnchorProposal ) public addAnchorProposals;
+    mapping ( uint => AddAnchorProposal ) public addOrUpdateAnchorProposals;
 
     mapping ( uint => RemoveAnchorProposal ) public removeAnchorProposal;
 
@@ -57,47 +57,60 @@ contract KuknosDAO is Voting, Config {
         return contractHasNoOwener();
     }
 
+    function updateAnchorWithToken(string memory _name, string memory _url, address[] memory _members) internal {
+        deleteAnchor(_name);
+        addAnchorWithToken(_name, _url, _members);
+    }
+
+
 
     function checkProposalResult(uint _id, ProposalTypes pType) internal view returns(bool) {
-        (,,,uint32 proposalType, address contractAddress,, bool isFinished,,,bool successFull) = getProposalStatus(_id);
+        (,,,uint32 proposalType, address contractAddress,, bool isFinished,,,bool successful) = getProposalStatus(_id);
         require(proposalType == uint(pType), "type mismatch");
         require(contractAddress == address(this), "the propsal is not an internal proposal");
         require(isFinished,"the propsal is not finished");
-        return successFull;
+        return successful;
     }
 
     // Add new Anchor Proposal
-    function registerAddAnchorProposal(
+    function registerAddOrUpdateAnchorProposal(
       string memory _anchorName,
       string memory _anchorUrl,
       address[] memory _members,
       uint32 _startDate,
       uint32 _endDate,
       string memory _url,
-      string memory _hashCode
+      string memory _hashCode,
+      ProposalTypes _type
       ) public onlyMembers {
+          require(_type == ProposalTypes.AddAnchor || _type == ProposalTypes.UpdateAnchor, "choose valide type");
           require(bytes(_anchorName).length > 0, "select name for anchor");
           internalProposalsCount++;
           uint id = registerInternalProposal(
               internalProposalsCount,
               "add anchor",
-              uint32(ProposalTypes.AddAnchor),
+              uint32(_type),
               _startDate,
               _endDate,
               _url,
               _hashCode,
               addAnchorThreshold);
-          addAnchorProposals[id] = AddAnchorProposal(_anchorName, _anchorUrl, _members, 0);
+          addOrUpdateAnchorProposals[id] = AddAnchorProposal(_anchorName, _anchorUrl, _members, 0);
     }
 
-    function runAddAnchorProposal(uint _id) public onlyMembers {
-        AddAnchorProposal memory proposal = addAnchorProposals[_id];
+    function runAddOrUpdateAnchorProposal(uint _id, ProposalTypes _type) public onlyMembers {
+        require(_type == ProposalTypes.AddAnchor || _type == ProposalTypes.UpdateAnchor, "choose valide type");
+        AddAnchorProposal memory proposal = addOrUpdateAnchorProposals[_id];
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
-        if (checkProposalResult(_id, ProposalTypes.AddAnchor)) {
-            addAnchorWithToken(proposal.name, proposal.url, proposal.members);
+        if (checkProposalResult(_id, ProposalTypes(_type))) {
+            if(_type == ProposalTypes.AddAnchor){
+                addAnchorWithToken(proposal.name, proposal.url, proposal.members);
+            }else{
+                updateAnchorWithToken(proposal.name, proposal.url, proposal.members);
+            }
         }
-        addAnchorProposals[_id].executionTime = getTime();
+        addOrUpdateAnchorProposals[_id].executionTime = getTime();
     }
 
     // Remove an anchor proposal
@@ -162,7 +175,6 @@ contract KuknosDAO is Voting, Config {
         }
         renewAccessTockenProposal[_id].executionTime = getTime();
     }
-
 
     // set AccessToken proposal
     function addChangeConfigProposal(
