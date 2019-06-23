@@ -86,7 +86,7 @@
         "id": 1217,
         "nodeType": "ImportDirective",
         "scope": 1289,
-        "sourceUnit": 2042,
+        "sourceUnit": 2056,
         "src": "34:29:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -250,10 +250,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2059,
-                        2060
+                        2073,
+                        2074
                       ],
-                      "referencedDeclaration": 2060,
+                      "referencedDeclaration": 2074,
                       "src": "168:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -457,10 +457,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2041,
+                        "referencedDeclaration": 2055,
                         "src": "306:5:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2041_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2055_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -471,7 +471,7 @@
                       "lValueRequested": false,
                       "memberName": "removeAddressFromArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2040,
+                      "referencedDeclaration": 2054,
                       "src": "306:28:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$",
@@ -801,10 +801,10 @@
                           "name": "Utils",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2041,
+                          "referencedDeclaration": 2055,
                           "src": "622:5:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Utils_$2041_$",
+                            "typeIdentifier": "t_type$_t_contract$_Utils_$2055_$",
                             "typeString": "type(library Utils)"
                           }
                         },
@@ -815,7 +815,7 @@
                         "lValueRequested": false,
                         "memberName": "findIndex",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1961,
+                        "referencedDeclaration": 1975,
                         "src": "622:15:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_array$_t_address_$dyn_memory_ptr_$_t_address_$returns$_t_int256_$",
@@ -986,7 +986,7 @@
         "id": 1217,
         "nodeType": "ImportDirective",
         "scope": 1289,
-        "sourceUnit": 2042,
+        "sourceUnit": 2056,
         "src": "34:29:4",
         "symbolAliases": [],
         "unitAlias": ""
@@ -1150,10 +1150,10 @@
                       "name": "require",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        2059,
-                        2060
+                        2073,
+                        2074
                       ],
-                      "referencedDeclaration": 2060,
+                      "referencedDeclaration": 2074,
                       "src": "168:7:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_require_pure$_t_bool_$_t_string_memory_ptr_$returns$__$",
@@ -1357,10 +1357,10 @@
                         "name": "Utils",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 2041,
+                        "referencedDeclaration": 2055,
                         "src": "306:5:4",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_type$_t_contract$_Utils_$2041_$",
+                          "typeIdentifier": "t_type$_t_contract$_Utils_$2055_$",
                           "typeString": "type(library Utils)"
                         }
                       },
@@ -1371,7 +1371,7 @@
                       "lValueRequested": false,
                       "memberName": "removeAddressFromArray",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 2040,
+                      "referencedDeclaration": 2054,
                       "src": "306:28:4",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_nonpayable$_t_array$_t_address_$dyn_storage_ptr_$_t_address_$returns$__$",
@@ -1701,10 +1701,10 @@
                           "name": "Utils",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 2041,
+                          "referencedDeclaration": 2055,
                           "src": "622:5:4",
                           "typeDescriptions": {
-                            "typeIdentifier": "t_type$_t_contract$_Utils_$2041_$",
+                            "typeIdentifier": "t_type$_t_contract$_Utils_$2055_$",
                             "typeString": "type(library Utils)"
                           }
                         },
@@ -1715,7 +1715,7 @@
                         "lValueRequested": false,
                         "memberName": "findIndex",
                         "nodeType": "MemberAccess",
-                        "referencedDeclaration": 1961,
+                        "referencedDeclaration": 1975,
                         "src": "622:15:4",
                         "typeDescriptions": {
                           "typeIdentifier": "t_function_internal_pure$_t_array$_t_address_$dyn_memory_ptr_$_t_address_$returns$_t_int256_$",
@@ -1862,7 +1862,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.9",
-  "updatedAt": "2019-06-23T11:27:53.729Z",
+  "updatedAt": "2019-06-23T11:35:14.971Z",
   "devdoc": {
     "methods": {}
   },

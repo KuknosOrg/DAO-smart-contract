@@ -22,9 +22,14 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint8 threshold;
   }
 
+  struct Vote {
+    int8 vote;
+    string description;
+  }
+
   Proposal[] proposals;
 
-  mapping (uint => mapping(address => int8)) public votesReceived;
+  mapping (uint => mapping(address => Vote)) public votesReceived;
 
   constructor(uint _voterTokensCount) AccessToken(_voterTokensCount) public {
   }
@@ -39,18 +44,18 @@ contract Voting is Ownable, AccessToken, Anchors {
     renewToken(members, false);
   }
 
-  function voteForProposal(uint _proposalIndex, int8 _vote) public onlyMembers {
+  function voteForProposal(uint _proposalIndex, int8 _vote, string memory _description) public onlyMembers {
     Proposal memory proposal = proposals[_proposalIndex];
     require(proposal.author != address(0), "proposal not found");
     require(proposal.startDate < getTime(), "voting is not started");
     require(proposal.endDate > getTime(), "voting was finished");
-    require(votesReceived[_proposalIndex][msg.sender] == 0, "your vote registered later");
+    require(votesReceived[_proposalIndex][msg.sender].vote == 0, "your vote registered later");
     require(_vote != 0, "you must set up or down with 1 or -1 value");
     if(_vote > 0) {
-      votesReceived[_proposalIndex][msg.sender] = 1;
+      votesReceived[_proposalIndex][msg.sender] = Vote(1,_description);
       proposals[_proposalIndex].up += 1;
     } else {
-      votesReceived[_proposalIndex][msg.sender] = -1;
+      votesReceived[_proposalIndex][msg.sender] = Vote(-1,_description);
       proposals[_proposalIndex].down += 1;
     }
   }
