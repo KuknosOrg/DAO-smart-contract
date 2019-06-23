@@ -8,9 +8,9 @@
   "scripts": {
     "test": "truffle test",
     "compile": "truffle compile",
-    "migrate": "truffle migrate --network development",
-    "console": "truffle console --network development",
-    "reset": "truffle migrate --reset"
+    "migrate": "truffle migrate --network ropsten",
+    "console": "truffle console --network ropsten",
+    "reset": "truffle migrate --reset --network ropsten"
   },
   "author": "Javad Khalilian <khalilian.javad@gmail.com>",
   "license": "ISC",
@@ -21,6 +21,5 @@
   "keywords": [],
   "description": "",
   "dependencies": {
-    "truffle-hdwallet-provider": "^1.0.11"
   }
 }
