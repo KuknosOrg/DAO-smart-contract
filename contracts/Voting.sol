@@ -128,9 +128,9 @@ contract Voting is Ownable, AccessToken, Anchors {
     string memory hashCode,
     address contractAddress,
     uint8 threshold
-    ) public onlyMembers useToken(1) {
+    ) public onlyMembers useToken(1) returns (uint) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
-        proposals.push(
+        return proposals.push(
           Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
         );
   }
