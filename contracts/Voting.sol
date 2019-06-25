@@ -132,7 +132,7 @@ contract Voting is Ownable, AccessToken, Anchors {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
         return proposals.push(
           Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
-        );
+        ) - 1;
   }
 
   function registerInternalProposal(
@@ -147,6 +147,6 @@ contract Voting is Ownable, AccessToken, Anchors {
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(
           Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold)
-        );
+        ) - 1;
   }
 }
