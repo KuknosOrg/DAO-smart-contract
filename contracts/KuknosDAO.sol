@@ -44,6 +44,10 @@ contract KuknosDAO is Voting, Config {
     constructor(uint _voterTokensCount) public Voting(_voterTokensCount) {
     }
 
+    function getAddOrUpdateAnchorProposalMembers(uint _id) public view returns (address[] memory members) {
+        return addOrUpdateAnchorProposals[_id].members;
+    }
+
     function addNewAnchor(string memory _name, string memory _url, address[] memory _members) public onlyOwner {
         addAnchorWithToken(_name, _url, _members);
     }
