@@ -7,7 +7,8 @@ contract Config {
         RemoveAnchorThreshold,
         RenewAccessTokenThreshold,
         ChangeAnchorMemberThreshold,
-        ChangeConfigThreshold
+        ChangeConfigThreshold,
+        AccessTokensCount
     }
 
     uint8 public addAnchorThreshold = 51;

@@ -27,6 +27,7 @@ contract KuknosDAO is Voting, Config {
 
     struct ChangeConfigProposal {
         string name;
+        ChangeConfigType configType;
         uint8 value;
         uint executionTime;
     }
@@ -186,7 +187,8 @@ contract KuknosDAO is Voting, Config {
       uint32 _startDate,
       uint32 _endDate,
       string memory _url,
-      string memory _hashCode
+      string memory _hashCode,
+      ChangeConfigType _configType
       ) public onlyMembers {
           internalProposalsCount++;
           uint id = registerInternalProposal(
@@ -198,7 +200,7 @@ contract KuknosDAO is Voting, Config {
               _url,
               _hashCode,
               changeConfigThreshold);
-          changeConfigProposal[id] = ChangeConfigProposal("change config", newValue, 0);
+          changeConfigProposal[id] = ChangeConfigProposal("config change",_configType, newValue, 0);
     }
 
     function runChangeConfigProposal(uint _id) public onlyMembers {
@@ -206,10 +208,13 @@ contract KuknosDAO is Voting, Config {
         require(bytes(proposal.name).length > 0, "propsal not found");
         require(proposal.executionTime == 0, "the proposal executed before");
         if (checkProposalResult(_id, ProposalTypes.ChangeConfig)) {
-            renewToken(members, true);
+            if(proposal.configType == ChangeConfigType.AccessTokensCount){
+                setAccessTokensCount(proposal.value);
+            }else{
+                setConfig(proposal.configType, proposal.value);
+            }
         }
         renewAccessTockenProposal[_id].executionTime = getTime();
     }
-
 
 }
