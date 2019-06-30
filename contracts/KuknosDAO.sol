@@ -5,7 +5,7 @@ import "./Config.sol";
 
 contract KuknosDAO is Voting, Config {
 
-    enum ProposalTypes { AddAnchor, UpdateAnchor, RemoveAnchor, ChangeAnchorMember, RenewAccessToken, ChangeConfig }
+    enum ProposalTypes { AddAnchor, UpdateAnchor, RemoveAnchor, ChangeAnchorMember, RenewAccessToken, ChangeConfig, Public, kuknos }
 
     struct AddAnchorProposal {
         string name;
@@ -215,6 +215,28 @@ contract KuknosDAO is Voting, Config {
             }
         }
         renewAccessTockenProposal[_id].executionTime = getTime();
+    }
+
+    function addCustomProposal(
+      string memory _title,
+      ProposalTypes _type,
+      uint32 _startDate,
+      uint32 _endDate,
+      string memory _url,
+      string memory _hashCode
+      ) public onlyMembers {
+          require(_type == ProposalTypes.Public || _type == ProposalTypes.kuknos, "choose valide type");
+          internalProposalsCount++;
+          registerInternalProposal(
+              internalProposalsCount,
+              _title,
+              uint32(_type),
+              _startDate,
+              _endDate,
+              _url,
+              _hashCode,
+              _type == ProposalTypes.Public ? publicThreshold : kuknosThreshold
+              );
     }
 
 }

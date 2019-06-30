@@ -8,7 +8,9 @@ contract Config {
         RenewAccessTokenThreshold,
         ChangeAnchorMemberThreshold,
         ChangeConfigThreshold,
-        AccessTokensCount
+        AccessTokensCount,
+        PublicThreshold,
+        KuknosThreshold
     }
 
     uint8 public addAnchorThreshold = 51;
@@ -20,6 +22,10 @@ contract Config {
     uint8 public changeAnchorMemberThreshold = 51;
 
     uint8 public changeConfigThreshold = 80;
+
+    uint8 public publicThreshold = 80;
+
+    uint8 public kuknosThreshold = 51;
 
     function setConfig(ChangeConfigType configType, uint8 value) internal {
 
@@ -41,6 +47,14 @@ contract Config {
 
         if(configType == ChangeConfigType.ChangeConfigThreshold) {
             changeConfigThreshold = value;
+        }
+
+        if(configType == ChangeConfigType.PublicThreshold) {
+            publicThreshold = value;
+        }
+
+        if(configType == ChangeConfigType.KuknosThreshold) {
+            kuknosThreshold = value;
         }
     }
 
