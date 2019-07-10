@@ -20,6 +20,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint16 down;
     address contractAddress;
     uint8 threshold;
+    uint8 membersCount;
   }
 
   struct Vote {
@@ -103,7 +104,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint16 downPercentage,
     bool isSucceed ) {
     Proposal memory proposal = proposals[index];
-    uint total = proposal.up + proposal.down;
+    uint total = proposal.membersCount;
     return (
       proposal.id,
       proposal.up,
@@ -131,7 +132,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     ) public onlyMembers useToken(1) returns (uint) {
         require(contractAddress != address(this), "using internal contract for external proposal is invalid");
         return proposals.push(
-          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold)
+          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, contractAddress, threshold, uint8(membersCount()))
         ) - 1;
   }
 
@@ -146,7 +147,7 @@ contract Voting is Ownable, AccessToken, Anchors {
     uint8 threshold
     ) internal onlyMembers useToken(1) returns (uint) {
         return proposals.push(
-          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold)
+          Proposal(id, title, proposalType, startDate, endDate, msg.sender, url,hashCode, uint32(getTime()), 0, 0, address(this), threshold, uint8(membersCount()))
         ) - 1;
   }
 }
